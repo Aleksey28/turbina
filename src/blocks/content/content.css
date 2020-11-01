@@ -1,0 +1,16 @@
+.content {
+  width: calc(100vw - 10px * 2);
+  min-width: calc(768px - 5px * 2);
+  max-width: 1260px;
+
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+
+
+@media screen and (max-width: 768px) {
+  .content {
+    width: calc(100vw - 5px * 2);
+    min-width: 320px;
+  }
+}
