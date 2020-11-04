@@ -2,6 +2,7 @@
 @import url('./fonts/inter.css');
 @import url('./blocks/page/page.css');
 @import url('./blocks/content/content.css');
+<<<<<<< HEAD
 @import url('./blocks/link/link.css');
 @import url('./blocks/header/header.css');
 @import url('./blocks/logo/logo.css');
@@ -12,3 +13,8 @@
 @import url('./blocks/content/__thesis-list/content__thesis-list.css');
 @import url('./blocks/content/__thesis-item/content__thesis-item.css');
 
+=======
+@import url('./blocks/plyer/player.css');
+@import url('./blocks/song/song.css');
+@import url('./blocks/progress/progress.css');
+>>>>>>> 5c54676... feat: added player

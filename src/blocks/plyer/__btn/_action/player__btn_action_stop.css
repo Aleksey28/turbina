@@ -1,0 +1,6 @@
+.player__btn_action_stop {
+  width: 16px;
+  height: 16px;
+
+  background-image: url(../../../../image/btn-stop.svg);
+}

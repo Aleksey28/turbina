@@ -1,0 +1,9 @@
+@import url('./__btn/player__btn.css');
+@import url('./__btn/_action/player__btn_action_play.css');
+@import url('./__btn/_action/player__btn_action_stop.css');
+
+.player {
+  display: flex;
+
+  height: 37px;
+}

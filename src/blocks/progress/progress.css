@@ -1,0 +1,9 @@
+@import url(./__bar/progress__bar.css);
+@import url(./__bg/progress__bg.css);
+
+.progress {
+  width: 1150px;
+  height: 3px;
+
+  cursor: pointer;
+}

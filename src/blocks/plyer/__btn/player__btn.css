@@ -1,0 +1,13 @@
+.player__btn {
+  cursor:pointer;
+
+  border:none;
+  outline: none;
+  background:transparent;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+.player__btn:hover {
+  opacity:0.5;
+}

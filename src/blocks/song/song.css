@@ -1,0 +1,10 @@
+@import url('./__name/song__name.css');
+@import url('./__time/song__time.css');
+@import url('./__description/song__description.css');
+
+.song {
+  display: flex;
+  flex-direction: column;
+
+  width: 1150px;
+}
