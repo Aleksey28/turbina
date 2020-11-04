@@ -1,0 +1,17 @@
+.player__btn_action_maximize {
+  margin: 3px 0 0  15px;
+
+  background-image: url(../../../../image/btn-unwrap.svg);
+}
+
+@media screen and (max-width: 1024px) {
+  .player__btn_action_maximize {
+    margin-left: calc((100vw - 768px) / (1024 - 768) * (15 - 20) + 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player__btn_action_maximize {
+    margin-left: 20px;
+  }
+}

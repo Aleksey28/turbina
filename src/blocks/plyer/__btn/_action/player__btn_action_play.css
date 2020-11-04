@@ -1,6 +1,5 @@
 .player__btn_action_play {
-  width: 20px;
-  height: 16px;
+  margin: 2px 10px 0 0;
 
   background-image: url(../../../../image/btn-play.svg);
 }
