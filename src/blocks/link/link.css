@@ -12,8 +12,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .link:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .link {
+    height: 29px;
+    padding: 7px 12px 7px 14px;
+    margin-bottom: 6px;
+  }
 }
