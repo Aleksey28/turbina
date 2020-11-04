@@ -1,0 +1,19 @@
+@import url('./__title/link__title.css');
+
+.link {
+  height: 40px;
+  width: max-content;
+  border: 2px solid white;
+  text-decoration: none;
+  border-radius: 30px;
+  color: white;
+  padding: 8px 20px 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link:last-child {
+  margin-bottom: 0;
+}
