@@ -23,7 +23,7 @@
 @media screen and (max-width: 550px) {
   .player__song_small {
     width: 100%;
-    height: 230px;
+    height: 41px;
     margin-bottom: 12px;
   }
 }
