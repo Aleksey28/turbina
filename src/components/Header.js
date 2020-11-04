@@ -1,6 +1,6 @@
 import React from 'react';
 import logo  from '../images/Logo.svg';
-import turbina from '../images/turbina.png'
+import turbina from '../images/turbina.svg'
 import Link from './Link'
 
 function Header() {
