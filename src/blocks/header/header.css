@@ -1,0 +1,13 @@
+@import url('./__section/header__section.css');
+@import url('./__links/header__links.css');
+@import url('./__title/header__title.css');
+@import url('./__pic/header__pic.css');
+
+
+.header {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}

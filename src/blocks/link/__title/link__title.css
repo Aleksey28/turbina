@@ -1,0 +1,10 @@
+.link__title {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  transition: all .3s;
+}
+
+.link__title:hover {
+  font-style: italic;
+}
