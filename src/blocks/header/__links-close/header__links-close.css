@@ -1,0 +1,16 @@
+.header__links-close {
+  display: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: url('../../../images/close.svg') no-repeat center;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 320px) {
+  .header__links-close{
+    display: block;
+  }
+}

@@ -9,6 +9,7 @@ function Header() {
       <div className="header__section">
         <a href="https://marshakbooks.ru/"><img src={logo} className="logo" alt="Логотип" /></a>
         <div className="header__links">
+          <button className="header__links-close"></button>
           <Link title="Яндекс.Музыка ↗" path="https://music.yandex.ru/home" />
           <Link title="Spotify ↗" path="https://www.spotify.com/ru-ru/" />
           <Link title="Apple Music ↗" path="https://www.apple.com/ru/apple-music/" />
