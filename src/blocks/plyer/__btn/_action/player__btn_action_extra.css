@@ -1,0 +1,50 @@
+.player__btn_action_extra {
+  box-sizing: border-box;
+  width: 135px;
+  min-width: 0;
+  height: 35px;
+  min-height: 0;
+  margin-left: 18px;
+
+  text-align: center;
+
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 19px;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .player__btn_action_extra {
+    width: calc((100vw - 1024px) / (1280 - 1024) * (135 - 125) + 125px);
+
+    font-size: calc((100vw - 1024px) / (1280 - 1024) * (16 - 15) + 15px);
+    line-height: calc((100vw - 1024px) / (1280 - 1024) * (19 - 18) + 18px);
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .player__btn_action_extra {
+    width: 125px;
+
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .player__btn_action_extra {
+    width: 100%;
+    height: 31px;
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

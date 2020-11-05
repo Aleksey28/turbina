@@ -1,0 +1,7 @@
+.player__song-description {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 12px;
+}

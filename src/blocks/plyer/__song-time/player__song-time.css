@@ -1,0 +1,42 @@
+.player__song-time {
+  margin: 0;
+
+  text-align: right;
+
+  color: #FFFFFF;
+
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .player__song-time {
+    font-size: calc((100vw - 1024px) / (1280 - 1024) * (20 - 18) + 18px);
+    line-height: calc((100vw - 1024px) / (1280 - 1024) * (24 - 22) + 22px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .player__song-time {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .player__song-time {
+    font-size: calc((100vw - 320px) / (768 - 320) * (18 - 14) + 14px);
+    line-height: calc((100vw - 320px) / (768 - 320) * (22 - 19) + 19px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .player__song-time {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

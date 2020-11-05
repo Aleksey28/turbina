@@ -1,0 +1,33 @@
+.player__btn {
+  overflow: hidden;
+
+  width: 24px;
+  min-width: 16px;
+  height: 24px;
+  min-height: 16px;
+  padding: 0;
+
+  cursor:pointer;
+  transition: all 0.5s ease;
+
+  border:none;
+  outline: none;
+  background:transparent;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+
+
+.player__btn:hover {
+  opacity:0.5;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .player__btn {
+    width: calc((100vw - 320px) / (768 - 320) * (24 - 16) + 16px);
+    height: calc((100vw - 320px) / (768 - 320) * (24 - 16) + 16px);
+  }
+}

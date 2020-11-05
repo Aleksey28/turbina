@@ -11,4 +11,5 @@
 @import url('./blocks/content/__contacts-form/content__contacts-form.css');
 @import url('./blocks/content/__thesis-list/content__thesis-list.css');
 @import url('./blocks/content/__thesis-item/content__thesis-item.css');
-
+@import url('./blocks/plyer/player.css');
+@import url('./blocks/progress/progress.css');

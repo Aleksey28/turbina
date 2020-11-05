@@ -1,0 +1,13 @@
+@import url(./__bar/progress__bar.css);
+@import url(./__bg/progress__bg.css);
+
+.progress {
+  width: 100%;
+  height: 3px;
+
+  cursor: pointer;
+}
+
+.progress:hover  .progress__bg .progress__bar {
+  border-bottom: 1px solid #FFFFFF;;
+}
