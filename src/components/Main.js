@@ -1,4 +1,5 @@
-import '../index.css';
+import React from 'react';
+import Form from './Form';
 
 export default function Main() {
   return (
@@ -14,7 +15,6 @@ export default function Main() {
         Давайте попробуем внимательнее присмотреться к нашим
         детям.
       </p>
-
       <p className="content__paragraph">Мы запускаем проект «ТУРБИНА», который открывает работу настоящего музыкального лейбла 
         на базе «Маршака». В рамках «ТУРБИНЫ» лучшие современные инди-музыканты
         пишут свои песни на стихи, написанные детьми. Здесь важно — мы не заставляем наших детей садиться и писать
@@ -31,20 +31,15 @@ export default function Main() {
         возможно съёмки клипа и так далее. Мы всегда
         указываем автора стихотворений внутри релиза: Хадн Дадн feat. Варя Карпова и Федя Быстров — Контур.</p>
       <h2 className="content__title">Тезисы</h2>
-      <p className="content__paragraph">
-      <ul className="content__thesis-list">
+      <ul className="content__paragraph content__thesis-list">
         <li className="content__thesis-item">• Дети никогда не прекращают творить и круто стараться быть на них похожими в этом.</li>
         <li className="content__thesis-item">• Детское бессознательное помогает родителям понять, что происходит внутри семьи.</li>
         <li className="content__thesis-item">• Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное в ней.</li>
         <li className="content__thesis-item">• Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</li>
       </ul>
-      </p>
     </section>
     <section className="content__contacts-form">
-      <h2 className="content__title">Форма</h2>
-      <p className="content__paragraph">
-        Заполняя эту форму, вы становитесь частью проекта.
-      </p>
+      <Form />
     </section>
   </main>
   )
