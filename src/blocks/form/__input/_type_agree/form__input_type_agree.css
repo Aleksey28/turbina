@@ -1,0 +1,14 @@
+.form__input_type_agree {
+  margin-top: 40px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  border: 2px solid #000000;
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (max-width: 320px) {
+  .form__input_type_agree {
+    margin-right: 12px;
+  }
+}

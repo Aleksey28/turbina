@@ -1,4 +1,3 @@
-import '../index.css';
 import Main from './Main';
 import Header from './Header';
 import Player from './Player';

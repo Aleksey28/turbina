@@ -13,3 +13,9 @@
 @import url('./blocks/content/__thesis-item/content__thesis-item.css');
 @import url('./blocks/plyer/player.css');
 @import url('./blocks/progress/progress.css');
+@import url('./blocks/form/form.css');
+@import url('./blocks/form/__input/form__input.css');
+@import url('./blocks/form/__link/form__link.css');
+@import url('./blocks/form/__input/_type_agree/form__input_type_agree.css');
+@import url('./blocks/form/__btn/form__btn.css');
+@import url('./blocks/form/__agreement/form__agreement.css');
