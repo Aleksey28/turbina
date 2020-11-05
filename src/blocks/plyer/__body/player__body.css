@@ -1,0 +1,12 @@
+.player__body {
+  overflow: hidden;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 104px;
+
+  transition: all ease-in 0.5s;
+
+  border: none;
+}

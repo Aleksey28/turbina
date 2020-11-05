@@ -15,13 +15,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .player__song_small {
+  .player__song_minimize {
     width: calc((100vw - 550px) / (768 - 550) * (494 - 300) + 300px);
   }
 }
 
 @media screen and (max-width: 550px) {
-  .player__song_small {
+  .player__song_minimize {
     width: 100%;
     height: 41px;
     margin-bottom: 12px;
