@@ -1,34 +1,7 @@
 .form__input_type_agree {
-  margin-top: 40px;
-  margin-right: 20px;
-  margin-bottom: 40px;
-  width: 28px;
-  height: 28px;
-  background-image: url('../../../../images/form-radio-btn.svg');
-  background-size: contain;
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: url('../../../../images/form-cursor.svg'), pointer;
-}
-
-.form__input_type_agree:focus {
-  outline: none;
-}
-
-.form__input_type_agree:checked {
-  outline: none;
-  background-image: url('../../../../images/form-radio-btn-checked.svg');
-  background-size: contain;
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-@media screen and (max-width: 320px) {
-  .form__input_type_agree {
-    margin-right: 12px;
-  }
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 }
