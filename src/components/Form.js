@@ -18,11 +18,12 @@ export default function Form() {
         <textarea id="form-text-input" className="form__input" name="text" placeholder="Стихи" minLength="20" required></textarea>
         <span id="form-text-input-error"></span>
         <label className="form__agreement">
-          <input id="form-agree-input" type="radio" className="form__input_type_agree" name="agree" required />
-          Согласен с&nbsp;<a className="form__link" href="https://api.kanye.rest"> офертой</a>
+          <input id="form-agree-input" type="checkbox" className="form__input_type_agree" name="agree" required />
+          <span className="form__pseudo-item form__cursor"></span>
+          Согласен с&nbsp;<a className="form__link form__cursor" href="https://api.kanye.rest"> офертой</a>
         </label>
         <span id="form-agree-input-error"></span>
-        <button type="submit" className="form__btn">Отправить форму</button>
+        <button type="submit" className="form__btn form__cursor">Отправить форму</button>
         <span id="input-error" className="form__error-btn_visible">Упс, что-то пошло не&nbsp;так и&nbsp;форма не&nbsp;отправилась, попробуйте ещё раз!</span>
       </form>
     </>
