@@ -1,9 +1,21 @@
 .header__title {
-  margin: 0 auto 189px;
+  margin: 0 auto 210px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__title {
+    margin-bottom: 182px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__title {
+    margin-bottom: 353px;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .header__title {
-    margin-bottom: 264px;
+    margin-bottom: 249px;
   }
 }

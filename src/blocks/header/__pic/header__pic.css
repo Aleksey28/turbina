@@ -2,14 +2,20 @@
   width: 100%;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1024px) {
   .header__pic {
-    width: 504px;
+    width: 600px;
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 768px) {
   .header__pic {
-    width: 304px;
+    width: 620px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__pic {
+    width: 270px;
   }
 }

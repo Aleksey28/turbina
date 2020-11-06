@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__section">
-        <a href="https://marshakbooks.ru/">
+        <a href="https://marshakbooks.ru/" target="_blank" rel="noreferrer">
           <img src={logo} className="logo" alt="Логотип" />
         </a>
         <button className="link link_streaming link__title">Стриминги</button>
