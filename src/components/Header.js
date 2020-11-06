@@ -8,15 +8,11 @@ function Header() {
   return (
     <header className="header">
       <div className="header__section">
-        <a href="https://marshakbooks.ru/" target="_blank" rel="noreferrer">
-          <img src={logo} className="logo" alt="Логотип" />
-        </a>
-        <button
-          className="link link_streaming link__title"
-        >
-          Стриминги
-        </button>
-        <div className= "header__links">
+      <a href="https://marshakbooks.ru/" target="_blank" rel="noreferrer">
+        <img src={logo} className="logo" alt="Логотип" />
+      </a>
+      <button className="link link_streaming link__title">Стриминги</button>
+      <div className="header__links">
           <button className="header__links-close"></button>
           <Link title="Яндекс.Музыка ↗" path="https://music.yandex.ru/home" />
           <Link title="Spotify ↗" path="https://www.spotify.com/ru-ru/" />
