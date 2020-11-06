@@ -9,9 +9,16 @@
   opacity: 0.9;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1024px) {
   .logo {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logo {
+    width: 24px;
+    height: 24px;
   }
 }
