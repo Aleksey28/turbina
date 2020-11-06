@@ -18,6 +18,9 @@
   line-height: 19px;
 }
 
+.player__btn_action_extra:hover {
+  font-style: italic;
+}
 
 @media screen and (max-width: 1280px) {
   .player__btn_action_extra {

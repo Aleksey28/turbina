@@ -1,5 +1,6 @@
 import React from 'react';
-import logo  from '../images/Logo.svg';
+import Player from './Player';
+import logo from '../images/Logo.svg';
 import turbina from '../images/turbina.svg';
 import Link from './Link';
 
@@ -7,7 +8,10 @@ function Header() {
   return (
     <header className="header">
       <div className="header__section">
-        <a href="https://marshakbooks.ru/"><img src={logo} className="logo" alt="Логотип" /></a>
+        <a href="https://marshakbooks.ru/">
+          <img src={logo} className="logo" alt="Логотип" />
+        </a>
+        <button className="link link_streaming link__title">Стриминги</button>
         <div className="header__links">
           <button className="header__links-close"></button>
           <Link title="Яндекс.Музыка ↗" path="https://music.yandex.ru/home" />
@@ -17,10 +21,11 @@ function Header() {
         </div>
       </div>
       <h1 className="header__title">
-        <img className="header__pic" src={turbina} alt="Турбина"/>
+        <img className="header__pic" src={turbina} alt="Турбина" />
       </h1>
+      <Player />
     </header>
-  )
-};
+  );
+}
 
-export default Header
+export default Header;

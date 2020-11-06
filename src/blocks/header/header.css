@@ -3,13 +3,17 @@
 @import url('./__title/header__title.css');
 @import url('./__pic/header__pic.css');
 @import url('./__links-close/header__links-close.css');
+@import url('./__links/_hidden/header__links_hidden.css');
 
 
 .header {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
