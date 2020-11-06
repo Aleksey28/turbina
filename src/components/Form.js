@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Form() {
   return (
-    <> 
+    <>
       <h2 className="content__title">Форма</h2>
       <p className="content__paragraph">Заполняя эту форму, вы&nbsp;становитесь частью проекта</p>
       <form className="form" noValidate>

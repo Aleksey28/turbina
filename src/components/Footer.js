@@ -4,7 +4,7 @@ export default function Footer() {
       <p className="footer__sing">© Маршак, {new Date().getFullYear()}.</p>
       <p className="footer__author">
         Сделано студентами{' '}
-        <a href="https://praktikum.yandex.ru/" target="_blank" className="footer__link">
+        <a href="https://praktikum.yandex.ru/" target="_blank" className="footer__link" rel="noreferrer">
           Яндекс.Практикум
         </a>
       </p>
