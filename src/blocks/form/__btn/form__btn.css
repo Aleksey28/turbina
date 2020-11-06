@@ -3,4 +3,9 @@
   background: #FFFFFF;
   border: 2px solid #000000;
   border-radius: 30px;
+  cursor: url('../../../images/form-cursor.svg'), pointer;
+}
+
+.form__btn {
+  outline: none;
 }
