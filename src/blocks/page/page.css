@@ -15,4 +15,10 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+
+  background-image: url('./../../images/background.png');
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
+import Player from './Player';
 import logo from '../images/Logo.svg';
 import turbina from '../images/turbina.svg';
 import Link from './Link';
-import Player from './Player';
 
 function Header() {
   return (
