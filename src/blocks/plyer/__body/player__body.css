@@ -32,3 +32,21 @@
 .player__body::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+@media screen and (max-width: 1280px) {
+  .player__body {
+    height: calc((100vw - 1024px) / (1280 - 1024) * (104 - 96) + 96px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .player__body {
+    height: 96px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .player__body {
+    height: 80px;
+  }
+}
