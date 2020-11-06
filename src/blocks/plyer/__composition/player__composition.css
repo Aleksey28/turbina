@@ -1,0 +1,21 @@
+.player__composition {
+  overflow: hidden;
+
+  margin: 0 0 12px;
+
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+
+  color: #FFFFFF;
+
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 24px;
+}
+
+.player__composition:hover {
+  opacity:0.5;
+
+  font-style: italic;
+}

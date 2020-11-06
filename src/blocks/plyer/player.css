@@ -15,7 +15,10 @@
 @import url(./__song/_minimize/player__song_minimize.css);
 @import url(./__body/player__body.css);
 @import url(./__body/_minimize/player__body_minimize.css);
+@import url(./__body-title/player__body-title.css);
 @import url(./__text/player__text.css);
+@import url(./__composition/player__composition.css);
+
 
 .player {
   position: absolute;

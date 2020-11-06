@@ -1,15 +1,30 @@
 import React from 'react';
+import url from 'url';
+import Composition from './Composition';
+// import Audio from './Audio';
+// import ReactCSSTransitionGroup from 'react-transition-group';
 import { listOfSongs } from '../utils/constants';
 
 export default function Player() {
-  const song = listOfSongs[1];
-
   const [play, setPlay] = React.useState(false);
   const [minimize, setMinimize] = React.useState(true);
   const [progressMax, setProgressMax] = React.useState(0);
   const [progress, setProgress] = React.useState(0);
   const [refPlayer, setRefPlayer] = React.useState();
-  const [showText, setShowText] = React.useState(true);
+  const [showText, setShowText] = React.useState(false);
+  const [songs, setSongs] = React.useState([]);
+  const [selectedSong, setSelectedSong] = React.useState({});
+
+  React.useEffect(() => {
+    setSongs(
+      listOfSongs.map((item) => {
+        return <Composition composition={item} onSongClick={handleClickOnComposition} key={item.id}></Composition>;
+      }),
+    );
+    setSelectedSong(listOfSongs[0]);
+  }, []);
+
+  React.useEffect(() => {}, [selectedSong]);
 
   const handlePlay = () => {
     if (!!refPlayer.duration) {
@@ -32,6 +47,12 @@ export default function Player() {
 
   const handleSetRefPlayer = (ref) => {
     setRefPlayer(ref);
+    if (!!ref && url.parse(ref.currentSrc).path !== selectedSong.link) {
+      ref.load();
+      if (ref.paused && play) {
+        ref.play();
+      }
+    }
   };
 
   const handleSetProgressMax = () => {
@@ -49,16 +70,27 @@ export default function Player() {
     }
   };
 
+  const handleClickOnComposition = (composition) => {
+    setSelectedSong(composition);
+  };
+
   return (
     <div className={`player`}>
       <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
+        {/* <Audio
+          selectedSong={selectedSong}
+          handleSetRefPlayer={handleSetRefPlayer}
+          handleSetProgressMax={handleSetProgressMax}
+          handleSetProgress={handleSetProgress}
+          handlePlay={handlePlay}
+        ></Audio> */}
         <audio
           ref={handleSetRefPlayer}
           onLoadedMetadata={handleSetProgressMax}
           onTimeUpdate={handleSetProgress}
           onEnded={handlePlay}
         >
-          <source src={song.link} />
+          <source src={selectedSong.link} />
         </audio>
         <button
           type="button"
@@ -71,7 +103,7 @@ export default function Player() {
         <div className="player__title">
           <div className={`player__song ${minimize ? '' : 'player__song_minimize'}`}>
             <div className="player__song-description">
-              <p className="player__song-name">{song.name}</p>
+              <p className="player__song-name">{selectedSong.name}</p>
               <p className="player__song-time">{formatTime(progress)}</p>
             </div>
             <div className="progress" onClick={handleSkipAhead}>
@@ -90,7 +122,7 @@ export default function Player() {
             className={`player__btn player__btn_action_extra ${minimize ? 'player__btn_hidden' : ''}`}
             onClick={handleClickExtra}
           >
-            {showText ? 'Текст песни' : 'Релизы'}
+            {!showText ? 'Текст песни' : 'Релизы'}
           </button>
         </div>
         <button
@@ -100,10 +132,10 @@ export default function Player() {
         ></button>
       </div>
       <div className={`player__body ${minimize ? 'player__body_minimize' : ''}`}>
-        <p className="player__text">
-          Текст песни:
-          {`\n${song.text}`}
+        <p className="player__body-title">
+          {showText ? 'Текст песни:' : songs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
         </p>
+        {showText ? <p className="player__text">{selectedSong.text}</p> : songs.length < 2 ? <></> : songs}
       </div>
     </div>
   );

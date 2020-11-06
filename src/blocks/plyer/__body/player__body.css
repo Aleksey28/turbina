@@ -9,13 +9,20 @@
   transition: all ease-in 0.5s;
 
   border: none;
+  /* Настройки скролл бара только для FF */
 
   scrollbar-color: rgba(255, 255, 255, 0.3) rgba(243, 243, 243, 0.1);
   scrollbar-width: thin;
+  /* Чтобы скрыть используем другой параметр */
+  /* scrollbar-width: none; */
 }
 
+
+/* Настройки для браузеров с webkit */
 .player__body::-webkit-scrollbar {
   width: 3px;
+  /* Чтобы скрыть используем другой параметр */
+  /* width: 0; */
 }
 
 .player__body::-webkit-scrollbar-track {
