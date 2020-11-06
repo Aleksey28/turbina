@@ -1,12 +1,27 @@
 .player__body {
   overflow: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 
   box-sizing: border-box;
-  width: 100%;
+  width: 94%;
   height: 104px;
 
   transition: all ease-in 0.5s;
 
   border: none;
+
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(243, 243, 243, 0.1);
+  scrollbar-width: thin;
+}
+
+.player__body::-webkit-scrollbar {
+  width: 3px;
+}
+
+.player__body::-webkit-scrollbar-track {
+  background-color: rgba(243, 243, 243, 0.1);
+}
+
+.player__body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
 }
