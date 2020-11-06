@@ -11,10 +11,17 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .content__contacts-form {
+    margin-right: 50px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .content__contacts-form {
     margin-top: 60px;
     margin-left: 20px;
     margin-bottom: 80px;
+    margin-right: 20px;
   }
 }

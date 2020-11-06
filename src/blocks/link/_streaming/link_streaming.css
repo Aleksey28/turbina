@@ -1,0 +1,13 @@
+.link_streaming {
+  background-color: transparent;
+  margin: 13px 13px 0 0;
+  display: none;
+  align-items: center;
+}
+
+@media screen and (max-width: 320px) {
+  .link_streaming {
+    display: block;
+    margin-bottom: 240px;
+  }
+}
