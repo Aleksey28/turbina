@@ -1,0 +1,11 @@
+.footer__link {
+  transition: all ease-in 0.2s;
+
+  color: #FFFFFF;
+}
+
+.footer__link:hover {
+  opacity:0.5;
+
+  font-style: italic;
+}
