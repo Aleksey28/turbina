@@ -2,6 +2,7 @@
   width: calc(100vw - 10px * 2);
   min-width: calc(768px - 5px * 2);
   max-width: 1260px;
+
   margin: 0 auto;
 
   border-radius: 10px;

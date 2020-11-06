@@ -1,7 +1,7 @@
 import React from 'react';
 import logo  from '../images/Logo.svg';
-import turbina from '../images/turbina.svg'
-import Link from './Link'
+import turbina from '../images/turbina.svg';
+import Link from './Link';
 
 function Header() {
   return (
