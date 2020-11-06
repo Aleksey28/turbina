@@ -1,4 +1,6 @@
 @import url(./__btn/player__btn.css);
+@import url(./__header/player__header.css);
+@import url(./__header/_minimize/player__header_minimize.css);
 @import url(./__title/player__title.css);
 @import url(./__btn/_action/player__btn_action_play.css);
 @import url(./__btn/_action/player__btn_action_stop.css);
@@ -10,19 +12,33 @@
 @import url(./__song-name/player__song-name.css);
 @import url(./__song-time/player__song-time.css);
 @import url(./__song/player__song.css);
-@import url(./__song/_small/player__song_small.css);
+@import url(./__song/_minimize/player__song_minimize.css);
+@import url(./__body/player__body.css);
+@import url(./__body/_minimize/player__body_minimize.css);
+@import url(./__body-title/player__body-title.css);
+@import url(./__text/player__text.css);
+@import url(./__composition/player__composition.css);
+
 
 .player {
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+
   display: flex;
+  align-items: center;
+  flex-direction: column;
 
   width: calc(100% - 24px * 2);
   max-width: calc(1280px - 24px * 2);
-  min-height: 60px;
-  margin: 0 auto;
+  min-height: 42px;
+  padding-bottom: 30px;
 }
 
 @media screen and (max-width: 550px) {
   .player {
+    left: 10px;
+
     width: calc(100% - 10px * 2);
   }
 }

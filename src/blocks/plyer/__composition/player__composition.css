@@ -1,0 +1,43 @@
+.player__composition {
+  overflow: hidden;
+
+  margin: 0 0 12px;
+
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+
+  color: #FFFFFF;
+
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 24px;
+}
+
+.player__composition:hover {
+  opacity:0.5;
+
+  font-style: italic;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .player__composition {
+    font-size: calc((100vw - 1024px) / (1280 - 1024) * (20 - 18) + 18px);
+    line-height: calc((100vw - 1024px) / (1280 - 1024) * (24 - 22) + 22px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .player__composition {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .player__composition {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
