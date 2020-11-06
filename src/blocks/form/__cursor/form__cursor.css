@@ -1,4 +1,4 @@
 .form__cursor {
-  cursor: url('../../../images/form-cursor.svg'), pointer;
+  cursor: pointer;
 }
 

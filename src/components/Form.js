@@ -18,7 +18,7 @@ export default function Form() {
         <textarea id="form-text-input" className="form__input" name="text" placeholder="Стихи" minLength="20" required></textarea>
         <span id="form-text-input-error"></span>
         <label className="form__agreement">
-          <input id="form-agree-input" type="radio" className="form__input_type_agree" name="agree" required />
+          <input id="form-agree-input" type="checkbox" className="form__input_type_agree" name="agree" required />
           <span className="form__pseudo-item form__cursor"></span>
           Согласен с&nbsp;<a className="form__link form__cursor" href="https://api.kanye.rest"> офертой</a>
         </label>
