@@ -18,11 +18,20 @@ export default function Player() {
   React.useEffect(() => {
     setSongs(
       listOfSongs.map((item) => {
-        return <Composition composition={item} onSongClick={handleClickOnComposition} key={item.id}></Composition>;
+        return (
+          <Composition
+            composition={item}
+            onSongClick={handleClickOnComposition}
+            currentCompositionLink={selectedSong.link}
+            key={item.id}
+          ></Composition>
+        );
       }),
     );
-    setSelectedSong(listOfSongs[0]);
-  }, []);
+    if (!selectedSong.link) {
+      setSelectedSong(listOfSongs[0]);
+    }
+  }, [selectedSong]);
 
   React.useEffect(() => {}, [selectedSong]);
 
