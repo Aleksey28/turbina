@@ -1,0 +1,14 @@
+@import url(./__item/page-ripple__item.css);
+
+.page-ripple {
+  position: relative;
+
+  overflow: hidden;
+
+  color: #000000;
+  background-image: url(../../images/rippleBG.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-size: cover;
+}

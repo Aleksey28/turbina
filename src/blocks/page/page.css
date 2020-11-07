@@ -6,8 +6,7 @@
   min-width: 320px;
 
   color: #000000;
-  background-color: #E5E5E5;
-  background-image: url('./../../images/background.png');
+  background-image: radial-gradient(radial-gradient(at bottom, rgba(31,24,65,0.9) 0%, rgba(32,35,114,0.9) 30%, rgba(202,161,169, 0.9) 100%));
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 0 0;
