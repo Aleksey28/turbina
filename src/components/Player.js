@@ -1,7 +1,6 @@
 import React from 'react';
 import url from 'url';
 import Composition from './Composition';
-// import Audio from './Audio';
 // import ReactCSSTransitionGroup from 'react-transition-group';
 import { listOfSongs } from '../utils/constants';
 
@@ -77,13 +76,6 @@ export default function Player() {
   return (
     <div className={`player`}>
       <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
-        {/* <Audio
-          selectedSong={selectedSong}
-          handleSetRefPlayer={handleSetRefPlayer}
-          handleSetProgressMax={handleSetProgressMax}
-          handleSetProgress={handleSetProgress}
-          handlePlay={handlePlay}
-        ></Audio> */}
         <audio
           ref={handleSetRefPlayer}
           onLoadedMetadata={handleSetProgressMax}
