@@ -35,7 +35,7 @@ export default function Player() {
 
   React.useEffect(() => {}, [selectedSong]);
 
-  const handlePlay = () => {
+  const handleClickPlay = () => {
     if (!!refPlayer.duration) {
       if (!play) {
         refPlayer.play();
@@ -59,10 +59,11 @@ export default function Player() {
     if (!!ref) {
       const currentCompositionLink = url.parse(ref.currentSrc).path;
       if (!!currentCompositionLink && currentCompositionLink !== selectedSong.link) {
-        ref.load();
-        if (ref.paused && play) {
-          ref.play();
+        const isPlaying = ref.currentTime > 0 && !ref.paused && !ref.ended && ref.readyState > 2;
+        if (isPlaying) {
+          ref.autoplay = true;
         }
+        ref.load();
       }
     }
   };
@@ -90,6 +91,10 @@ export default function Player() {
     setCountdown(!countdown);
   };
 
+  const handlePlayAudio = () => {
+    refPlayer.autoplay = false;
+  };
+
   return (
     <div className={`player`}>
       <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
@@ -97,14 +102,15 @@ export default function Player() {
           ref={handleSetRefPlayer}
           onLoadedMetadata={handleSetProgressMax}
           onTimeUpdate={handleSetProgress}
-          onEnded={handlePlay}
+          onEnded={handleClickPlay}
+          onPlay={handlePlayAudio}
         >
           <source src={selectedSong.link} />
         </audio>
         <button
           type="button"
           className={`player__btn player__btn_action_${!play ? 'play' : 'stop'}`}
-          onClick={handlePlay}
+          onClick={handleClickPlay}
         ></button>
 
         {/* Пришлось делать дополнительную обертку, т.к. при скрытии эекстра кнопки, более правая от неё начинает прыгать
