@@ -13,6 +13,7 @@ export default function Player() {
   const [showText, setShowText] = React.useState(false);
   const [songs, setSongs] = React.useState([]);
   const [selectedSong, setSelectedSong] = React.useState({});
+  const [countdown, setCountdown] = React.useState(true);
 
   React.useEffect(() => {
     setSongs(
@@ -73,6 +74,10 @@ export default function Player() {
     setSelectedSong(composition);
   };
 
+  const handleClickOnTime = () => {
+    setCountdown(!countdown);
+  };
+
   return (
     <div className={`player`}>
       <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
@@ -96,7 +101,9 @@ export default function Player() {
           <div className={`player__song ${minimize ? '' : 'player__song_minimize'}`}>
             <div className="player__song-description">
               <p className="player__song-name">{selectedSong.name}</p>
-              <p className="player__song-time">{formatTime(progress)}</p>
+              <p className="player__song-time" onClick={handleClickOnTime}>
+                {formatTime((refPlayer && countdown ? refPlayer.duration : progress + progress) - progress)}
+              </p>
             </div>
             <div className="progress" onClick={handleSkipAhead}>
               <div className="progress__bg">
