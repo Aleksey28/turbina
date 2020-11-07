@@ -56,10 +56,13 @@ export default function Player() {
 
   const handleSetRefPlayer = (ref) => {
     setRefPlayer(ref);
-    if (!!ref && url.parse(ref.currentSrc).path !== selectedSong.link) {
-      ref.load();
-      if (ref.paused && play) {
-        ref.play();
+    if (!!ref) {
+      const currentCompositionLink = url.parse(ref.currentSrc).path;
+      if (!!currentCompositionLink && currentCompositionLink !== selectedSong.link) {
+        ref.load();
+        if (ref.paused && play) {
+          ref.play();
+        }
       }
     }
   };

@@ -1,0 +1,28 @@
+
+@keyframes ripple {
+  30% {
+    transform: scale(2);
+  }
+  60% {
+    transform: scale(2);
+  }
+}
+.page-ripple__item {
+  position: absolute;
+  z-index: 0;
+
+  width: 100px;
+  height: 100px;
+
+  transform: scale(0);
+  animation-name: ripple;
+  animation-duration: 850ms;
+
+  opacity: 1;
+  border: none;
+  border-radius: 100%;
+  background-image: radial-gradient(circle, rgba(44,94,121,1) 0%, rgba(212,159,177,1)100%);
+  box-shadow: 0 0 6px 3px rgba(212,159,177,1);
+
+  animation-fill-mode: forwards;
+}
