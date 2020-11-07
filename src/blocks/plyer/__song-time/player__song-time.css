@@ -1,6 +1,8 @@
 .player__song-time {
   margin: 0;
 
+  cursor: pointer;
+  transition: opacity ease-in 0.3s;
   text-align: right;
 
   color: #FFFFFF;
@@ -11,6 +13,11 @@
   line-height: 24px;
 }
 
+.player__song-time:hover {
+  opacity: 0.5;
+
+  font-style: italic;
+}
 
 @media screen and (max-width: 1280px) {
   .player__song-time {

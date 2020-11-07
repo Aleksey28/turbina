@@ -1,7 +1,6 @@
 import React from 'react';
 import url from 'url';
 import Composition from './Composition';
-// import Audio from './Audio';
 // import ReactCSSTransitionGroup from 'react-transition-group';
 import { listOfSongs } from '../utils/constants';
 
@@ -14,15 +13,25 @@ export default function Player() {
   const [showText, setShowText] = React.useState(false);
   const [songs, setSongs] = React.useState([]);
   const [selectedSong, setSelectedSong] = React.useState({});
+  const [countdown, setCountdown] = React.useState(true);
 
   React.useEffect(() => {
     setSongs(
       listOfSongs.map((item) => {
-        return <Composition composition={item} onSongClick={handleClickOnComposition} key={item.id}></Composition>;
+        return (
+          <Composition
+            composition={item}
+            onSongClick={handleClickOnComposition}
+            currentCompositionLink={selectedSong.link}
+            key={item.id}
+          ></Composition>
+        );
       }),
     );
-    setSelectedSong(listOfSongs[0]);
-  }, []);
+    if (!selectedSong.link) {
+      setSelectedSong(listOfSongs[0]);
+    }
+  }, [selectedSong]);
 
   React.useEffect(() => {}, [selectedSong]);
 
@@ -74,16 +83,13 @@ export default function Player() {
     setSelectedSong(composition);
   };
 
+  const handleClickOnTime = () => {
+    setCountdown(!countdown);
+  };
+
   return (
     <div className={`player`}>
       <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
-        {/* <Audio
-          selectedSong={selectedSong}
-          handleSetRefPlayer={handleSetRefPlayer}
-          handleSetProgressMax={handleSetProgressMax}
-          handleSetProgress={handleSetProgress}
-          handlePlay={handlePlay}
-        ></Audio> */}
         <audio
           ref={handleSetRefPlayer}
           onLoadedMetadata={handleSetProgressMax}
@@ -104,7 +110,9 @@ export default function Player() {
           <div className={`player__song ${minimize ? '' : 'player__song_minimize'}`}>
             <div className="player__song-description">
               <p className="player__song-name">{selectedSong.name}</p>
-              <p className="player__song-time">{formatTime(progress)}</p>
+              <p className="player__song-time" onClick={handleClickOnTime}>
+                {formatTime((refPlayer && countdown ? refPlayer.duration : progress + progress) - progress)}
+              </p>
             </div>
             <div className="progress" onClick={handleSkipAhead}>
               <div className="progress__bg">
