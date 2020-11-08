@@ -1,0 +1,23 @@
+.form__pseudo-checkbox {
+  border: 2px solid #000000;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (max-width: 320px) {
+  .form____pseudo-checkbox {
+    margin-right: 12px; 
+  }
+}
+
+.form__input_type_agree:focus + .form__pseudo-checkbox {
+  box-shadow: 0 0 5px #E5E5E5;
+}
+
+.form__input_type_agree:checked + .form__pseudo-checkbox {
+  background-color: #000000;
+}
