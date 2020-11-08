@@ -106,7 +106,7 @@ export default function Player() {
           onEnded={handleClickPlay}
           onPlay={handlePlayAudio}
         >
-          <source src={selectedSong.link} />
+          <source src={selectedSong.link} type="audio/mpeg" />
         </audio>
         <button
           type="button"
