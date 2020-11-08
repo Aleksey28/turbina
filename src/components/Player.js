@@ -9,7 +9,7 @@ export default function Player() {
   const [minimize, setMinimize] = React.useState(true);
   const [progressMax, setProgressMax] = React.useState(0);
   const [progress, setProgress] = React.useState(0);
-  const [refPlayer, setRefPlayer] = React.useState();
+  const [refPlayer, setRefPlayer] = React.useState(null);
   const [showText, setShowText] = React.useState(false);
   const [songs, setSongs] = React.useState([]);
   const [selectedSong, setSelectedSong] = React.useState({});
