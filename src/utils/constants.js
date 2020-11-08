@@ -25,9 +25,61 @@ In a day or two `,
     link: track1,
     text: '',
   },
+  {
+    id: 3,
+    name: 'Test700KB',
+    link: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3',
+    text: `https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
+  },
+  {
+    id: 4,
+    name: 'Test1MG',
+    link: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3',
+    text: `https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
+    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
+  },
+  {
+    id: 5,
+    name: 'Test2MBTest2MBTest2MBTest2MBTest2MBTest2MBTest2MBTest2MBTest',
+    link: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3',
+    text: `https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
+https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3`,
+  },
 ];
 
 export const links = {
   author: 'https://praktikum.yandex.ru/',
-  offer: 'https://api.kanye.rest'
+  offer: 'https://api.kanye.rest',
 };

@@ -15,6 +15,7 @@ export default function Player() {
   const [songs, setSongs] = React.useState([]);
   const [selectedSong, setSelectedSong] = React.useState({});
   const [countdown, setCountdown] = React.useState(true);
+  const [refNameSong, setRefNameSong] = React.useState(null);
 
   React.useEffect(() => {
     setSongs(
@@ -57,9 +58,10 @@ export default function Player() {
 
   const handleSetRefPlayer = (ref) => {
     setRefPlayer(ref);
-    if (!!ref) {
+    if (!!ref && !!selectedSong.link) {
       const currentCompositionLink = url.parse(ref.currentSrc).path;
-      if (!!currentCompositionLink && currentCompositionLink !== selectedSong.link) {
+      const selectedCompositionLink = url.parse(selectedSong.link).path;
+      if (!!currentCompositionLink && currentCompositionLink !== selectedCompositionLink) {
         const isPlaying = ref.currentTime > 0 && !ref.paused && !ref.ended && ref.readyState > 2;
         if (isPlaying) {
           ref.autoplay = true;
@@ -96,6 +98,10 @@ export default function Player() {
     refPlayer.autoplay = false;
   };
 
+  const handleSetRefNameSong = (ref) => {
+    setRefNameSong(ref);
+  };
+
   return (
     <div className="player">
       <div className={cn('player__header', { player__header_minimize: minimize })}>
@@ -106,6 +112,7 @@ export default function Player() {
           onEnded={handleClickPlay}
           onPlay={handlePlayAudio}
         >
+          <source src={selectedSong.link} type="audio/ogg" />
           <source src={selectedSong.link} type="audio/mpeg" />
         </audio>
         <button
@@ -117,9 +124,18 @@ export default function Player() {
         {/* Пришлось делать дополнительную обертку, т.к. при скрытии эекстра кнопки, более правая от неё начинает прыгать
       Чтобы она не прыгала ширина предыдущего элемента не должна изменяться. */}
         <div className="player__title">
-          <div className={cn('player__song', { player__song_minimize: minimize })}>
+          <div className={cn('player__song', { player__song_minimize: !minimize })}>
             <div className="player__song-description">
-              <p className="player__song-name">{selectedSong.name}</p>
+              <p className="player__song-name">
+                <span
+                  ref={handleSetRefNameSong}
+                  className={cn({
+                    marquee: isOverflow(refNameSong),
+                  })}
+                >
+                  {selectedSong.name}
+                </span>
+              </p>
               <p className="player__song-time" onClick={handleClickOnTime}>
                 {formatTime((refPlayer && countdown ? refPlayer.duration : progress + progress) - progress)}
               </p>
@@ -212,3 +228,14 @@ function offsetLeft(el) {
   }
   return left;
 }
+
+const isOverflow = (ref) => {
+  if (!!ref) {
+    return (
+      ref.offsetWidth - (ref.classList.contains('marquee') ? ref.parentElement.offsetWidth : 0) >
+      ref.parentElement.offsetWidth
+    );
+  } else {
+    return false;
+  }
+};
