@@ -29,4 +29,5 @@ In a day or two `,
 
 export const links = {
   author: 'https://praktikum.yandex.ru/',
+  offer: 'https://api.kanye.rest'
 };

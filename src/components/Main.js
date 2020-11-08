@@ -26,12 +26,12 @@ export default function Main() {
       указываем автора стихотворений внутри релиза: Хадн Дадн feat. Варя Карпова и&nbsp;Федя Быстров&nbsp;&mdash; Контур.</p>
       <h2 className="content__title">Тезисы</h2>
       <ul className="content__paragraph content__thesis-list">
-        <li className="content__thesis-item">• Дети никогда не&nbsp;прекращают творить и&nbsp;круто стараться быть на&nbsp;них 
+        <li className="content__thesis-item">Дети никогда не&nbsp;прекращают творить и&nbsp;круто стараться быть на&nbsp;них 
         похожими в&nbsp;этом.</li>
-        <li className="content__thesis-item">• Детское бессознательное помогает родителям понять, что происходит внутри семьи.</li>
-        <li className="content__thesis-item">• Не&nbsp;существует детской и&nbsp;взрослой поэзии. Существует мысль и&nbsp;чувство, 
+        <li className="content__thesis-item">Детское бессознательное помогает родителям понять, что происходит внутри семьи.</li>
+        <li className="content__thesis-item">Не&nbsp;существует детской и&nbsp;взрослой поэзии. Существует мысль и&nbsp;чувство, 
         зафиксированное в&nbsp;ней.</li>
-        <li className="content__thesis-item">• Дети получают невероятное удовольствие и&nbsp;мотивацию от&nbsp;того, что 
+        <li className="content__thesis-item">Дети получают невероятное удовольствие и&nbsp;мотивацию от&nbsp;того, что 
         их&nbsp;творчество востребовано сверстниками и&nbsp;взрослыми.</li>
       </ul>
     </section>

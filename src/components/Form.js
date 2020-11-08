@@ -1,4 +1,5 @@
 import React from 'react';
+import { links } from '../utils/constants';
 
 export default function Form() {
   return (
@@ -8,7 +9,7 @@ export default function Form() {
       <form className="form" noValidate>
         <input id="form-name-input" type="text" className="form__input form__input_type_error" name="name" // TBC name value
         placeholder="Имя и фамилия автора" minLength="2" maxLength="40" required />
-        <span id="form-name-input-error" className="form__error_visible">Какая-то ошибка*</span>
+        <span id="form-name-input-error" className="form__error">Какая-то ошибка*</span>
         <input id="form-phone-input" type="tel" className="form__input" name="phone"
         placeholder="Телефон" minLength="7" maxLength="15" required />
         <span id="form-phone-input-error"></span>
@@ -18,9 +19,9 @@ export default function Form() {
         <textarea id="form-text-input" className="form__input" name="text" placeholder="Стихи" minLength="20" required></textarea>
         <span id="form-text-input-error"></span>
         <label className="form__agreement">
-          <input id="form-agree-input" type="checkbox" className="form__input_type_agree" name="agree" required />
-          <span className="form__pseudo-item form__cursor"></span>
-          Согласен с&nbsp;<a className="form__link form__cursor" href="https://api.kanye.rest">офертой</a>
+          <input id="form-agree-input" type="checkbox" className="form__checkbox-hidden" name="agree" required /> 
+          <span className="form__pseudo-checkbox form__cursor"></span>
+          <span className="form__agree-text">Согласен с&nbsp;<a className="form__link form__cursor" href={links.offer}>офертой</a></span>
         </label>
         <span id="form-agree-input-error"></span>
         <button type="submit" className="form__btn form__cursor">Отправить форму</button>
