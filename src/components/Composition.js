@@ -1,11 +1,15 @@
-export default function Composition({ composition, onSongClick }) {
+import React from 'react';
+
+export default function Composition({ composition, onSongClick, currentCompositionLink }) {
   const handleClick = () => {
     onSongClick(composition);
   };
 
   return (
-    <p className="player__composition" onClick={handleClick}>
-      {composition.name}
-    </p>
+    currentCompositionLink !== composition.link && (
+      <p className="player__composition" onClick={handleClick}>
+        {composition.name}
+      </p>
+    )
   );
 }

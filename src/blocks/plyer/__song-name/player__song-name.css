@@ -3,17 +3,11 @@
 
   color: #FFFFFF;
 
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 22px;
   font-weight: 500;
   font-style: normal;
   line-height: 27px;
-}
-
-@media screen and (max-width: 1280px) {
-  .player__song-name {
-    font-size: calc((100vw - 1024px) / (1280 - 1024) * (22 - 18) + 18px);
-    line-height: calc((100vw - 1024px) / (1280 - 1024) * (27 - 22) + 22px);
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -23,14 +17,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .player__song-name {
-    font-size: calc((100vw - 320px) / (768 - 320) * (18 - 14) + 14px);
-    line-height: calc((100vw - 320px) / (768 - 320) * (22 - 19) + 19px);
-  }
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .player__song-name {
     font-size: 14px;
     line-height: 19px;

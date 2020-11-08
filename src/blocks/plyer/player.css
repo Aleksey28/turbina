@@ -23,22 +23,20 @@
 .player {
   position: absolute;
   bottom: 0;
-  left: 24px;
 
   display: flex;
   align-items: center;
   flex-direction: column;
 
-  width: calc(100% - 24px * 2);
-  max-width: calc(1280px - 24px * 2);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 100%;
   min-height: 42px;
-  padding-bottom: 22px;
+  padding: 0 24px 22px;
 }
 
 @media screen and (max-width: 550px) {
   .player {
-    left: 10px;
-
-    width: calc(100% - 10px * 2);
+    padding: 0 10px 22px;
   }
 }

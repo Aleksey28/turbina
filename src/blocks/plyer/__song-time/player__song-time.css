@@ -1,22 +1,23 @@
 .player__song-time {
   margin: 0;
 
+  cursor: pointer;
+  transition: opacity ease-in 0.3s;
   text-align: right;
 
   color: #FFFFFF;
 
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: normal;
   font-style: normal;
   line-height: 24px;
 }
 
+.player__song-time:hover {
+  opacity: 0.5;
 
-@media screen and (max-width: 1280px) {
-  .player__song-time {
-    font-size: calc((100vw - 1024px) / (1280 - 1024) * (20 - 18) + 18px);
-    line-height: calc((100vw - 1024px) / (1280 - 1024) * (24 - 22) + 22px);
-  }
+  font-style: italic;
 }
 
 @media screen and (max-width: 1024px) {
@@ -26,15 +27,7 @@
   }
 }
 
-
-@media screen and (max-width: 768px) {
-  .player__song-time {
-    font-size: calc((100vw - 320px) / (768 - 320) * (18 - 14) + 14px);
-    line-height: calc((100vw - 320px) / (768 - 320) * (22 - 19) + 19px);
-  }
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .player__song-time {
     font-size: 14px;
     line-height: 19px;

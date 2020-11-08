@@ -3,11 +3,13 @@
 @import url(./__link/footer__link.css);
 
 .footer {
+  z-index: 1;
+
   display: flex;
   justify-content: space-between;
 
   width: calc(100% - 15px * 2);
-  max-width: 1280px;
+  max-width: calc(1280px - 15px * 2);
   margin: 0 auto;
   padding: 20px 0;
 }

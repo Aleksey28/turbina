@@ -1,32 +1,42 @@
 import React from 'react';
 import url from 'url';
 import Composition from './Composition';
-// import Audio from './Audio';
 // import ReactCSSTransitionGroup from 'react-transition-group';
 import { listOfSongs } from '../utils/constants';
+import cn from 'classnames';
 
 export default function Player() {
   const [play, setPlay] = React.useState(false);
   const [minimize, setMinimize] = React.useState(true);
   const [progressMax, setProgressMax] = React.useState(0);
   const [progress, setProgress] = React.useState(0);
-  const [refPlayer, setRefPlayer] = React.useState();
+  const [refPlayer, setRefPlayer] = React.useState(null);
   const [showText, setShowText] = React.useState(false);
   const [songs, setSongs] = React.useState([]);
   const [selectedSong, setSelectedSong] = React.useState({});
+  const [countdown, setCountdown] = React.useState(true);
 
   React.useEffect(() => {
     setSongs(
       listOfSongs.map((item) => {
-        return <Composition composition={item} onSongClick={handleClickOnComposition} key={item.id}></Composition>;
+        return (
+          <Composition
+            composition={item}
+            onSongClick={handleClickOnComposition}
+            currentCompositionLink={selectedSong.link}
+            key={item.id}
+          ></Composition>
+        );
       }),
     );
-    setSelectedSong(listOfSongs[0]);
-  }, []);
+    if (!selectedSong.link) {
+      setSelectedSong(listOfSongs[0]);
+    }
+  }, [selectedSong]);
 
   React.useEffect(() => {}, [selectedSong]);
 
-  const handlePlay = () => {
+  const handleClickPlay = () => {
     if (!!refPlayer.duration) {
       if (!play) {
         refPlayer.play();
@@ -47,10 +57,14 @@ export default function Player() {
 
   const handleSetRefPlayer = (ref) => {
     setRefPlayer(ref);
-    if (!!ref && url.parse(ref.currentSrc).path !== selectedSong.link) {
-      ref.load();
-      if (ref.paused && play) {
-        ref.play();
+    if (!!ref) {
+      const currentCompositionLink = url.parse(ref.currentSrc).path;
+      if (!!currentCompositionLink && currentCompositionLink !== selectedSong.link) {
+        const isPlaying = ref.currentTime > 0 && !ref.paused && !ref.ended && ref.readyState > 2;
+        if (isPlaying) {
+          ref.autoplay = true;
+        }
+        ref.load();
       }
     }
   };
@@ -74,37 +88,41 @@ export default function Player() {
     setSelectedSong(composition);
   };
 
+  const handleClickOnTime = () => {
+    setCountdown(!countdown);
+  };
+
+  const handlePlayAudio = () => {
+    refPlayer.autoplay = false;
+  };
+
   return (
-    <div className={`player`}>
-      <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
-        {/* <Audio
-          selectedSong={selectedSong}
-          handleSetRefPlayer={handleSetRefPlayer}
-          handleSetProgressMax={handleSetProgressMax}
-          handleSetProgress={handleSetProgress}
-          handlePlay={handlePlay}
-        ></Audio> */}
+    <div className="player">
+      <div className={cn('player__header', { player__header_minimize: minimize })}>
         <audio
           ref={handleSetRefPlayer}
           onLoadedMetadata={handleSetProgressMax}
           onTimeUpdate={handleSetProgress}
-          onEnded={handlePlay}
+          onEnded={handleClickPlay}
+          onPlay={handlePlayAudio}
         >
           <source src={selectedSong.link} />
         </audio>
         <button
           type="button"
-          className={`player__btn player__btn_action_${!play ? 'play' : 'stop'}`}
-          onClick={handlePlay}
+          className={cn('player__btn', { player__btn_action_play: !play, player__btn_action_stop: play })}
+          onClick={handleClickPlay}
         ></button>
 
         {/* Пришлось делать дополнительную обертку, т.к. при скрытии эекстра кнопки, более правая от неё начинает прыгать
       Чтобы она не прыгала ширина предыдущего элемента не должна изменяться. */}
         <div className="player__title">
-          <div className={`player__song ${minimize ? '' : 'player__song_minimize'}`}>
+          <div className={cn('player__song', { player__song_minimize: minimize })}>
             <div className="player__song-description">
               <p className="player__song-name">{selectedSong.name}</p>
-              <p className="player__song-time">{formatTime(progress)}</p>
+              <p className="player__song-time" onClick={handleClickOnTime}>
+                {formatTime((refPlayer && countdown ? refPlayer.duration : progress + progress) - progress)}
+              </p>
             </div>
             <div className="progress" onClick={handleSkipAhead}>
               <div className="progress__bg">
@@ -119,7 +137,7 @@ export default function Player() {
           </div>
           <button
             type="button"
-            className={`player__btn player__btn_action_extra ${minimize ? 'player__btn_hidden' : ''}`}
+            className={cn('player__btn player__btn_action_extra', { player__btn_hidden: minimize })}
             onClick={handleClickExtra}
           >
             {!showText ? 'Текст песни' : 'Релизы'}
@@ -127,11 +145,14 @@ export default function Player() {
         </div>
         <button
           type="button"
-          className={`player__btn player__btn_action_${!minimize ? 'minimize' : 'maximize'}`}
+          className={cn('player__btn', {
+            player__btn_action_minimize: !minimize,
+            player__btn_action_maximize: minimize,
+          })}
           onClick={handleMinMax}
         ></button>
       </div>
-      <div className={`player__body ${minimize ? 'player__body_minimize' : ''}`}>
+      <div className={cn('player__body', { player__body_minimize: minimize })}>
         <p className="player__body-title">
           {showText ? 'Текст песни:' : songs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
         </p>
@@ -152,10 +173,10 @@ function formatTime(s) {
   const seconds = totalSeconds - minutes * 60 - hours * 3600;
 
   if (hours) {
-    return hours + ':' + minutes + ':' + format2Number(seconds);
+    return `${hours}:${minutes}:${format2Number(seconds)}`;
   }
 
-  return minutes + ':' + format2Number(seconds);
+  return `${minutes}:${format2Number(seconds)}`;
 }
 
 function format2Number(num) {
