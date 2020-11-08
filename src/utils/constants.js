@@ -6,12 +6,6 @@ export const bakgroundColors = ['rgba(31,24,65,0.9)', 'rgba(32,35,114,0.9)', 'rg
 export const listOfSongs = [
   {
     id: 1,
-    name: 'Wham - Last Christmas',
-    link: track1,
-    text: '',
-  },
-  {
-    id: 2,
     name: 'A-HA - Take On Me',
     link: track2,
     text: `We're talking away
@@ -24,6 +18,12 @@ Take on me,
 Тake me on
 I'll be gone
 In a day or two `,
+  },
+  {
+    id: 2,
+    name: 'Wham - Last Christmas',
+    link: track1,
+    text: '',
   },
 ];
 
