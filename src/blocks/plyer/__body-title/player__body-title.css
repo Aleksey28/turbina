@@ -12,13 +12,6 @@
   line-height: 24px;
 }
 
-@media screen and (max-width: 1280px) {
-  .player__body-title {
-    font-size: calc((100vw - 1024px) / (1280 - 1024) * (20 - 18) + 18px);
-    line-height: calc((100vw - 1024px) / (1280 - 1024) * (24 - 22) + 22px);
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .player__body-title {
     font-size: 18px;

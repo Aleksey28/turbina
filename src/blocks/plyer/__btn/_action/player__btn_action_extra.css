@@ -26,9 +26,6 @@
 @media screen and (max-width: 1280px) {
   .player__btn_action_extra {
     width: calc((100vw - 1024px) / (1280 - 1024) * (135 - 125) + 125px);
-
-    font-size: calc((100vw - 1024px) / (1280 - 1024) * (16 - 15) + 15px);
-    line-height: calc((100vw - 1024px) / (1280 - 1024) * (19 - 18) + 18px);
   }
 }
 
