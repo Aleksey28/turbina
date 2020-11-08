@@ -6,17 +6,11 @@
 
   color: #FFFFFF;
 
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: 500;
   font-style: italic;
   line-height: 27px;
-}
-
-@media screen and (max-width: 1280px) {
-  .player__text {
-    font-size: calc((100vw - 1024px) / (1280 - 1024) * (20 - 18) + 18px);
-    line-height: calc((100vw - 1024px) / (1280 - 1024) * (27 - 26) + 26px);
-  }
 }
 
 @media screen and (max-width: 1024px) {
