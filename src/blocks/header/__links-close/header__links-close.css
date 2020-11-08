@@ -2,7 +2,7 @@
   display: none;
   border: 2px solid white;
   border-radius: 50%;
-  background: url('../../../images/close.svg') no-repeat center;
+  background: no-repeat center;
   width: 29px;
   height: 29px;
   padding: 0;

@@ -29,5 +29,30 @@ In a day or two `,
 
 export const links = {
   author: 'https://praktikum.yandex.ru/',
-  offer: 'https://api.kanye.rest'
+  offer: 'https://api.kanye.rest',
+  marshak: 'https://marshakbooks.ru/'
 };
+
+export const streamings = [
+  {
+    title: 'Яндекс.Музыка ↗',
+    link: 'https://music.yandex.ru/home',
+    id: '0',
+  },
+  {
+    title: 'Spotify ↗',
+    link: 'https://www.spotify.com/ru-ru/',
+    id: '1',
+  },
+  {
+    title: 'Apple Music ↗',
+    link: 'https://www.apple.com/ru/apple-music/',
+    id: '2',
+  },
+  {
+    title: 'VK Music ↗',
+    link: 'https://vk.com/vkmusic',
+    id: '3',
+  }
+];
+
