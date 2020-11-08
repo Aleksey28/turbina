@@ -20,7 +20,7 @@ export default function Form() {
         <label className="form__agreement">
           <input id="form-agree-input" type="checkbox" className="form__input_type_agree" name="agree" required />
           <span className="form__pseudo-item form__cursor"></span>
-          Согласен с&nbsp;<a className="form__link form__cursor" href="https://api.kanye.rest"> офертой</a>
+          Согласен с&nbsp;<a className="form__link form__cursor" href="https://api.kanye.rest">офертой</a>
         </label>
         <span id="form-agree-input-error"></span>
         <button type="submit" className="form__btn form__cursor">Отправить форму</button>

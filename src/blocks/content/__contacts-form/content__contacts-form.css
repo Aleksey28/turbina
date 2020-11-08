@@ -19,9 +19,6 @@
 
 @media screen and (max-width: 320px) {
   .content__contacts-form {
-    margin-top: 60px;
-    margin-left: 20px;
-    margin-bottom: 80px;
-    margin-right: 20px;
+    margin: 60px 20px 80px;
   }
 }
