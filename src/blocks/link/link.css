@@ -4,10 +4,10 @@
 .link {
   height: 35px;
   width: max-content;
-  border: 2px solid white;
+  border: 2px solid #FFF;
   text-decoration: none;
   border-radius: 30px;
-  color: white;
+  color: #FFF;
   padding: 8px 20px;
   margin-bottom: 8px;
   display: flex;
