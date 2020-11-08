@@ -1,6 +1,5 @@
 import React from 'react';
-
-//<Ripple duration={1000} color="yellow" size={250} />
+import { uid } from 'react-uid';
 
 export default function Ripple({
   duration = 850,
@@ -46,7 +45,7 @@ export default function Ripple({
             return (
               <span
                 className="page-ripple__item"
-                key={`span${index}`}
+                key={uid(ripple)}
                 style={{
                   top: ripple.y,
                   left: ripple.x,
