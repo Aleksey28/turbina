@@ -12,7 +12,7 @@
 @import url('./blocks/content/__contacts-form/content__contacts-form.css');
 @import url('./blocks/content/__thesis-list/content__thesis-list.css');
 @import url('./blocks/content/__thesis-item/content__thesis-item.css');
-@import url('./blocks/plyer/player.css');
+@import url('./blocks/player/player.css');
 @import url('./blocks/progress/progress.css');
 @import url('./blocks/form/form.css');
 @import url('./blocks/form/__input/form__input.css');
@@ -27,3 +27,4 @@
 @import url('./blocks/form/__pseudo-checkbox/form__pseudo-checkbox.css');
 @import url('./blocks/link/_streaming/link_streaming.css');
 @import url('./blocks/footer/footer.css');
+@import url('./blocks/scroll/scroll.css');

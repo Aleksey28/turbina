@@ -1,8 +1,8 @@
 import React from 'react';
 import url from 'url';
 import Composition from './Composition';
-// import ReactCSSTransitionGroup from 'react-transition-group';
 import { listOfSongs } from '../utils/constants';
+import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 
 export default function Player() {
@@ -106,7 +106,7 @@ export default function Player() {
           onEnded={handleClickPlay}
           onPlay={handlePlayAudio}
         >
-          <source src={selectedSong.link} />
+          <source src={selectedSong.link} type="audio/mpeg" />
         </audio>
         <button
           type="button"
@@ -153,10 +153,31 @@ export default function Player() {
         ></button>
       </div>
       <div className={cn('player__body', { player__body_minimize: minimize })}>
-        <p className="player__body-title">
-          {showText ? 'Текст песни:' : songs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
-        </p>
-        {showText ? <p className="player__text">{selectedSong.text}</p> : songs.length < 2 ? <></> : songs}
+        {/* Можно отключить дефолтные стили для  Scrollbar, но тогда отваляться стили для всех подчиенных элементов и придется их настраивать. А мне нужно настроить только сам скролл.
+        Поэтому проще поместить в другой блок, т.к. по умолчани Scrollbar имеет 100% размера родителя.*/}
+        <Scrollbar
+          // noDefaultStyles="true"
+          className={cn('player__body', { player__body_minimize: minimize })}
+          trackYProps={{
+            renderer: (props) => {
+              const { elementRef, ...restProps } = props;
+              restProps.style = {};
+              return <span {...restProps} ref={elementRef} className="scroll__track" />;
+            },
+          }}
+          thumbYProps={{
+            renderer: (props) => {
+              const { elementRef, ...restProps } = props;
+              restProps.style = {};
+              return <div {...restProps} ref={elementRef} className="scroll__thumb" />;
+            },
+          }}
+        >
+          <p className="player__body-title">
+            {showText ? 'Текст песни:' : songs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
+          </p>
+          {showText ? <p className="player__text">{selectedSong.text}</p> : songs.length < 2 ? <></> : songs}
+        </Scrollbar>
       </div>
     </div>
   );
