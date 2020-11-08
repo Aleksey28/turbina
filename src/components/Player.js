@@ -3,6 +3,7 @@ import url from 'url';
 import Composition from './Composition';
 // import ReactCSSTransitionGroup from 'react-transition-group';
 import { listOfSongs } from '../utils/constants';
+import cn from 'classnames';
 
 export default function Player() {
   const [play, setPlay] = React.useState(false);
@@ -96,8 +97,8 @@ export default function Player() {
   };
 
   return (
-    <div className={`player`}>
-      <div className={`player__header ${minimize ? 'player__header_minimize' : ''}`}>
+    <div className="player">
+      <div className={cn('player__header', { player__header_minimize: minimize })}>
         <audio
           ref={handleSetRefPlayer}
           onLoadedMetadata={handleSetProgressMax}
@@ -109,14 +110,14 @@ export default function Player() {
         </audio>
         <button
           type="button"
-          className={`player__btn player__btn_action_${!play ? 'play' : 'stop'}`}
+          className={cn('player__btn', { player__btn_action_play: !play, player__btn_action_stop: play })}
           onClick={handleClickPlay}
         ></button>
 
         {/* Пришлось делать дополнительную обертку, т.к. при скрытии эекстра кнопки, более правая от неё начинает прыгать
       Чтобы она не прыгала ширина предыдущего элемента не должна изменяться. */}
         <div className="player__title">
-          <div className={`player__song ${minimize ? '' : 'player__song_minimize'}`}>
+          <div className={cn('player__song', { player__song_minimize: minimize })}>
             <div className="player__song-description">
               <p className="player__song-name">{selectedSong.name}</p>
               <p className="player__song-time" onClick={handleClickOnTime}>
@@ -136,7 +137,7 @@ export default function Player() {
           </div>
           <button
             type="button"
-            className={`player__btn player__btn_action_extra ${minimize ? 'player__btn_hidden' : ''}`}
+            className={cn('player__btn player__btn_action_extra', { player__btn_hidden: minimize })}
             onClick={handleClickExtra}
           >
             {!showText ? 'Текст песни' : 'Релизы'}
@@ -144,11 +145,14 @@ export default function Player() {
         </div>
         <button
           type="button"
-          className={`player__btn player__btn_action_${!minimize ? 'minimize' : 'maximize'}`}
+          className={cn('player__btn', {
+            player__btn_action_minimize: !minimize,
+            player__btn_action_maximize: minimize,
+          })}
           onClick={handleMinMax}
         ></button>
       </div>
-      <div className={`player__body ${minimize ? 'player__body_minimize' : ''}`}>
+      <div className={cn('player__body', { player__body_minimize: minimize })}>
         <p className="player__body-title">
           {showText ? 'Текст песни:' : songs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
         </p>
@@ -169,10 +173,10 @@ function formatTime(s) {
   const seconds = totalSeconds - minutes * 60 - hours * 3600;
 
   if (hours) {
-    return hours + ':' + minutes + ':' + format2Number(seconds);
+    return `${hours}:${minutes}:${format2Number(seconds)}`;
   }
 
-  return minutes + ':' + format2Number(seconds);
+  return `${minutes}:${format2Number(seconds)}`;
 }
 
 function format2Number(num) {
