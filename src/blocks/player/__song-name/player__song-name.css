@@ -1,5 +1,9 @@
 .player__song-name {
+  overflow: hidden;
+
   margin: 0;
+
+  white-space:nowrap;
 
   color: #FFFFFF;
 

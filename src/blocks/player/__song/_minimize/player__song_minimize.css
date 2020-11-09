@@ -1,15 +1,15 @@
-.player__song_small {
+.player__song_minimize {
   width: 995px;
 }
 
 @media screen and (max-width: 1280px) {
-  .player__song_small {
+  .player__song_minimize {
     width: calc((100vw - 1024px) / (1280 - 1024) * (995 - 750) + 750px);
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .player__song_small {
+  .player__song_minimize {
     width: calc((100vw - 768px) / (1024 - 768) * (750 - 494) + 494px);
   }
 }
