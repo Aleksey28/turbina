@@ -8,7 +8,9 @@ export default function Composition({ composition, onSongClick, currentCompositi
   return (
     currentCompositionLink !== composition.link && (
       <p className="player__composition" onClick={handleClick}>
-        {composition.name}
+        {composition.name} — {composition.author}
+        {!!composition.originalAuthor && <span className="playet__song-feat"> {' .feat '} </span>}
+        {!!composition.originalAuthor && composition.originalAuthor}
       </p>
     )
   );

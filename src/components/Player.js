@@ -133,7 +133,9 @@ export default function Player() {
                     marquee: isOverflow(refNameSong),
                   })}
                 >
-                  {selectedSong.name}
+                  {selectedSong.name} — {selectedSong.author}
+                  {!!selectedSong.originalAuthor && <span className="playet__song-feat"> {' .feat '} </span>}
+                  {!!selectedSong.originalAuthor && selectedSong.originalAuthor}
                 </span>
               </p>
               <p className="player__song-time" onClick={handleClickOnTime}>

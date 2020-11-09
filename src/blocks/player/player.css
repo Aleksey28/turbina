@@ -10,6 +10,7 @@
 @import url(./__btn/_hidden/player__btn_hidden.css);
 @import url(./__song-description/player__song-description.css);
 @import url(./__song-name/player__song-name.css);
+@import url(./__song-feat/playet__song-feat.css);
 @import url(./__song-time/player__song-time.css);
 @import url(./__song/player__song.css);
 @import url(./__song/_minimize/player__song_minimize.css);
