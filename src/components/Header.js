@@ -7,15 +7,33 @@ import CloseIcon from './icons/CloseIcon'
 import { links, streamings } from '../utils/constants'
 
 function Header() {
+  const [isLinksOpen, setIsLinksOpen] = React.useState(false);
+  const [isButtonVisible, setIsButtonVisible] = React.useState(true);
+
+  const handleClick = () => {
+    setIsLinksOpen(true)
+    setIsButtonVisible(false)
+  }
+
+  const handleClose = () => {
+    setIsLinksOpen(false)
+    setIsButtonVisible(true)
+  }
+
   return (
     <header className="header">
       <div className="header__section">
         <a href={links.marshak} target="_blank" rel="noreferrer">
           <LogoIcon />
         </a>
-        <button className="link link_streaming">Стриминги</button>
-        <div className="header__links">
-          <button className="header__links-close">
+        <button
+          className= {`link link_streaming ${!isButtonVisible && `link_streaming-hidden`} `}
+          onClick={handleClick}
+        >
+          Стриминги
+        </button>
+        <div className={`header__links ${isLinksOpen && `header__links_visible`} `}>
+          <button className="header__links-close" onClick={handleClose}>
             <CloseIcon />
           </button>
           {streamings.map((item) => (
