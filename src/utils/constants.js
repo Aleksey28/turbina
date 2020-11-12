@@ -21,6 +21,7 @@ Take on me,
 I'll be gone
 In a day or two `,
     videoLink: 'https://www.youtube.com/watch?v=djV11Xbc914',
+    cover: 'https://s30886.pcdn.co/wp-content/uploads/2018/11/6-3.jpg',
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ In a day or two `,
     originalAuthor: '',
     link: track1,
     text: '',
-    videoLink: '',
+    videoLink: '#',
+    cover: '#',
   },
   {
     id: 3,
@@ -49,7 +51,8 @@ https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
-    videoLink: '',
+    videoLink: '#',
+    cover: '#',
   },
   {
     id: 4,
@@ -57,20 +60,9 @@ https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
     author: 'Test2',
     originalAuthor: 'Test3',
     link: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3',
-    text: `https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
-    https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
-    videoLink: '',
+    text: `https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
+    videoLink: '#',
+    cover: '#',
   },
   {
     id: 5,
@@ -90,7 +82,8 @@ https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3`,
-    videoLink: '',
+    videoLink: '#',
+    cover: '#',
   },
 ];
 

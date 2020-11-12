@@ -4,7 +4,6 @@ import { listOfSongs } from '../utils/constants';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 import PlayIcon from './icons/PlayIcon';
-// import BtnPlayClip from './BtnPlayClip';
 
 export default function Player() {
   const refPlayer = useRef(null);
@@ -82,6 +81,13 @@ export default function Player() {
         <source src={selectedSong.link} type="audio/ogg" />
         <source src={selectedSong.link} type="audio/mpeg" />
       </audio>
+
+      {/* Обложка трека */}
+      <img
+        src={selectedSong.cover}
+        alt="Обложка трека"
+        className={cn('player__cover', { player__cover_hidden: minimize })}
+      />
 
       {/* Блок контроля текущей композицией */}
       <div className={cn('player__controls', { player__controls_minimize: minimize })}>

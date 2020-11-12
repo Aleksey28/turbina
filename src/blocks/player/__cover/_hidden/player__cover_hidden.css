@@ -1,0 +1,6 @@
+.player__cover_hidden {
+  visibility: hidden;
+
+  width: 0;
+  height: 0;
+}

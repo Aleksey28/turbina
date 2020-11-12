@@ -25,6 +25,8 @@
 @import url(./__composition/player__composition.css);
 @import url(./__link-video/player__link-video.css);
 @import url(./__link-icon/player__link-icon.css);
+@import url(./__cover/player__cover.css);
+@import url(./__cover/_hidden/player__cover_hidden.css);
 
 
 .player {
@@ -32,7 +34,7 @@
   bottom: 0;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 
   box-sizing: border-box;
   width: 100%;
@@ -56,12 +58,9 @@
 
 @media screen and (max-width: 550px) {
   .player {
-    padding-right: calc((100vw - 550px) / (768 - 550) * (64 - 44) + 44px);
-  }
-}
+    align-items: center;
+    flex-direction: column;
 
-@media screen and (max-width: 550px) {
-  .player {
-    padding: 0 44px 22px 10px;
+    padding-right: calc((100vw - 550px) / (768 - 550) * (64 - 44) + 44px);
   }
 }
