@@ -3,6 +3,7 @@ import Song from './Song';
 import { listOfSongs } from '../utils/constants';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
+import PlayIcon from './icons/PlayIcon';
 // import BtnPlayClip from './BtnPlayClip';
 
 export default function Player() {
@@ -132,6 +133,14 @@ export default function Player() {
 
             {/* Правый блок контроля */}
             <div className={cn('player__controls-right', { 'player__controls-right_minimize': minimize })}>
+              {/* Ссылка для открытия плеера */}
+
+              {!minimize && !!selectedSong.videoLink && (
+                <a href={selectedSong.videoLink} className="player__link-video" target="_blank" rel="noreferrer">
+                  <PlayIcon className="player__link-icon" />
+                  Клип
+                </a>
+              )}
               {/* Свитчер кнопки экстра (Текст песни/Релизы) */}
               <button
                 type="button"

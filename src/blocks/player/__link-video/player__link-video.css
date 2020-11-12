@@ -1,0 +1,31 @@
+.player__link-video {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  box-sizing: border-box;
+  width: 94px;
+  height: 35px;
+  margin-right: 10px;
+
+  transition: all 0.5s ease;
+  text-align: center;
+  text-decoration: none;
+
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  background: #FFFFFF;
+
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 19px;
+}
+
+.player__link-video:hover {
+  opacity:0.5;
+
+  font-style: italic;
+}

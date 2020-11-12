@@ -1,28 +1,28 @@
-.player__controls-middle_minimize {
-  width: 995px;
+/* .player__controls-middle_minimize {
+  max-width: 995px;
 }
 
 @media screen and (max-width: 1280px) {
   .player__controls-middle_minimize {
-    width: calc((100vw - 1024px) / (1280 - 1024) * (995 - 750) + 750px);
+    max-width: calc((100vw - 1024px) / (1280 - 1024) * (995 - 750) + 750px);
   }
 }
 
 @media screen and (max-width: 1024px) {
   .player__controls-middle_minimize {
-    width: calc((100vw - 768px) / (1024 - 768) * (750 - 494) + 494px);
+    max-width: calc((100vw - 768px) / (1024 - 768) * (750 - 494) + 494px);
   }
 }
 
 @media screen and (max-width: 768px) {
   .player__controls-middle_minimize {
-    width: calc((100vw - 550px) / (768 - 550) * (494 - 300) + 300px);
+    max-width: calc((100vw - 550px) / (768 - 550) * (494 - 300) + 300px);
   }
-}
+} */
 
 @media screen and (max-width: 550px) {
   .player__controls-middle_minimize {
-    width: calc((100vw - 320px) / (550 - 320) * (437 - 240) + 240px);
+    /* max-width: calc((100vw - 320px) / (550 - 320) * (437 - 240) + 240px); */
     height: 41px;
     margin-bottom: 12px;
   }

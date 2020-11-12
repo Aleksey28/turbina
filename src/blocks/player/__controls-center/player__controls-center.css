@@ -1,4 +1,12 @@
 .player__controls-center {
   display: flex;
   flex-direction: column;
+
+  width: calc(100% - 44px);
+}
+
+@media screen and (max-width: 768px) {
+  .player__controls-center {
+    width: calc(100% - ((100vw - 320px) / (768 - 320) * (44 - 36) + 36px));
+  }
 }
