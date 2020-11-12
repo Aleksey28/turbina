@@ -1,0 +1,6 @@
+.player__controls {
+  display: flex;
+  justify-content: flex-start;
+
+  padding-bottom: 30px;
+}

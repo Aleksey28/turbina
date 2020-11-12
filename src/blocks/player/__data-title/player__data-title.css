@@ -1,4 +1,4 @@
-.player__body-title {
+.player__data-title {
   overflow: hidden;
 
   margin: 0 0 12px;
@@ -13,14 +13,14 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .player__body-title {
+  .player__data-title {
     font-size: 18px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .player__body-title {
+  .player__data-title {
     font-size: 14px;
     line-height: 19px;
   }

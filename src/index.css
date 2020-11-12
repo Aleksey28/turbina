@@ -13,6 +13,7 @@
 @import url('./blocks/content/__thesis-list/content__thesis-list.css');
 @import url('./blocks/content/__thesis-item/content__thesis-item.css');
 @import url('./blocks/player/player.css');
+@import url('./blocks/player/_maximize/player_maximize.css');
 @import url('./blocks/progress/progress.css');
 @import url('./blocks/form/form.css');
 @import url('./blocks/form/__input/form__input.css');
@@ -30,3 +31,4 @@
 @import url('./blocks/scroll/scroll.css');
 @import url('./blocks/marquee/marquee.css');
 @import url('./blocks/link/_streaming-hidden/link_streaming-hidden.css');
+@import url('./blocks/btn-play-clip/btn-play-clip.css');

@@ -1,0 +1,4 @@
+.player__controls-center {
+  display: flex;
+  flex-direction: column;
+}

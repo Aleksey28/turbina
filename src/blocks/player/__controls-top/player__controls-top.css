@@ -1,0 +1,9 @@
+.player__controls-top {
+  display: flex;
+}
+
+@media screen and (max-width: 550px) {
+  .player__controls-top {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,16 @@
+@import url(./__icon/btn-play-clip__icon.css);
+@import url(./__text/btn-play-clip__text.css);
+
+.btn-play-clip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  box-sizing: border-box;
+  width: 94px;
+  height: 35px;
+
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  background: #FFFFFF;
+}

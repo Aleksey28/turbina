@@ -1,5 +1,6 @@
 .player__song-time {
   margin: 0;
+  margin-left: 20px;
 
   cursor: pointer;
   transition: opacity ease-in 0.3s;

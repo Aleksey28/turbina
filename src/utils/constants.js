@@ -20,6 +20,7 @@ Take on me,
 Тake me on
 I'll be gone
 In a day or two `,
+    videoLink: 'https://www.youtube.com/watch?v=djV11Xbc914',
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ In a day or two `,
     originalAuthor: '',
     link: track1,
     text: '',
+    videoLink: '',
   },
   {
     id: 3,
@@ -47,6 +49,7 @@ https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
+    videoLink: '',
   },
   {
     id: 4,
@@ -67,6 +70,7 @@ https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
     https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
     https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3
     https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3`,
+    videoLink: '',
   },
   {
     id: 5,
@@ -86,6 +90,7 @@ https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3
 https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3`,
+    videoLink: '',
   },
 ];
 
