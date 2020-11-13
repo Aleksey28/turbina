@@ -1,5 +1,6 @@
 .player__controls {
   display: flex;
+  flex: 1;
   justify-content: flex-start;
 
   width: calc(100% - 176px - 25px);

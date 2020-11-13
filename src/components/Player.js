@@ -15,7 +15,7 @@ export default function Player() {
   const [minimize, setMinimize] = useState(true);
   const [countdown, setCountdown] = useState(true);
   const [showText, setShowText] = useState(false);
-  const [selectedSong, setSelectedSong] = useState(listOfSongs[4]);
+  const [selectedSong, setSelectedSong] = useState(listOfSongs[0]);
 
   // Обработчики событий плеера
 
