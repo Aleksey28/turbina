@@ -6,7 +6,7 @@ export default function Composition({ composition, onSongClick }) {
   };
 
   return (
-    <p className="player__composition" onClick={handleClick}>
+    <p className="player__song-name player__data-item" onClick={handleClick}>
       {composition.name} — {composition.author}
       {!!composition.originalAuthor && <span className="player__song-feat"> {' .feat '} </span>}
       {!!composition.originalAuthor && composition.originalAuthor}

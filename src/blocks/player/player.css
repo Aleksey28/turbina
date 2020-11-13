@@ -22,7 +22,7 @@
 @import url(./__data/_minimize/player__data_minimize.css);
 @import url(./__data-title/player__data-title.css);
 @import url(./__text/player__text.css);
-@import url(./__composition/player__composition.css);
+@import url(./__data-item/player__data-item.css);
 @import url(./__link-video/player__link-video.css);
 @import url(./__link-icon/player__link-icon.css);
 @import url(./__cover/player__cover.css);
@@ -38,7 +38,6 @@
 
   box-sizing: border-box;
   width: 100%;
-  /* min-width: calc(320px - 14px * 2); */
   min-height: 42px;
   padding: 0 64px 22px 24px;
 }
