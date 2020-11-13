@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Song from './Song';
+import Cover from './Cover';
 import { data } from '../utils/constants';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
@@ -97,11 +98,7 @@ export default function Player() {
       </audio>
 
       {/* Обложка трека */}
-      <img
-        src={selectedSong.cover}
-        alt="Обложка трека"
-        className={cn('player__cover', { player__cover_hidden: minimize })}
-      />
+      <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_top" />
 
       {/* Блок контроля текущей композицией */}
       <div className={cn('player__controls', { player__controls_minimize: minimize })}>
@@ -134,7 +131,9 @@ export default function Player() {
                   </span>
                 </p>
                 <p className="player__song-time" onClick={handleClickOnTime}>
-                  {formatTime((refPlayer && countdown ? refPlayer.duration : progress + progress) - progress)}
+                  {formatTime(
+                    (!!refPlayer.current && countdown ? refPlayer.current.duration : progress + progress) - progress,
+                  )}
                 </p>
               </div>
 
@@ -150,6 +149,8 @@ export default function Player() {
                 </div>
               </div>
             </div>
+
+            <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_among" />
 
             {/* Правый блок контроля */}
             <div className={cn('player__controls-right', { 'player__controls-right_minimize': minimize })}>
@@ -171,42 +172,47 @@ export default function Player() {
               </button>
             </div>
           </div>
-          {/* Блок списка песен и текстов песен */}
-          <div className={cn('player__data', { player__data_minimize: minimize })}>
-            {/* Компонент скролинга. Можно отключить дефолтные стили для  Scrollbar, но тогда отваляться стили для всех подчиенных элементов и придется их настраивать. А мне нужно настроить только сам скролл.
-        Поэтому проще поместить в другой блок, т.к. по умолчани Scrollbar имеет 100% размера родителя.*/}
-            <Scrollbar
-              // noDefaultStyles="true"
-              className={cn('player__data', { player__data_minimize: minimize })}
-              trackYProps={{
-                renderer: (props) => {
-                  const { elementRef, ...restProps } = props;
-                  restProps.style = {};
-                  return <span {...restProps} ref={elementRef} className="scroll__track" />;
-                },
-              }}
-              thumbYProps={{
-                renderer: (props) => {
-                  const { elementRef, ...restProps } = props;
-                  restProps.style = {};
-                  return <div {...restProps} ref={elementRef} className="scroll__thumb" />;
-                },
-              }}
-            >
-              {/* Заголовок данных */}
-              <p className="player__data-title">
-                {showText ? 'Текст песни:' : listSongs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
-              </p>
 
-              {/* Содержание данных */}
-              {showText ? (
-                <p className="player__text">{selectedSong.text}</p>
-              ) : listSongs.length < 2 ? (
-                <></>
-              ) : (
-                listSongs
-              )}
-            </Scrollbar>
+          <div className="player__bottom">
+            <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_left" />
+
+            {/* Блок списка песен и текстов песен */}
+            <div className={cn('player__data', { player__data_minimize: minimize })}>
+              {/* Компонент скролинга. Можно отключить дефолтные стили для  Scrollbar, но тогда отваляться стили для всех подчиенных элементов и придется их настраивать. А мне нужно настроить только сам скролл.
+        Поэтому проще поместить в другой блок, т.к. по умолчани Scrollbar имеет 100% размера родителя.*/}
+              <Scrollbar
+                // noDefaultStyles="true"
+                className={cn('player__data', { player__data_minimize: minimize })}
+                trackYProps={{
+                  renderer: (props) => {
+                    const { elementRef, ...restProps } = props;
+                    restProps.style = {};
+                    return <span {...restProps} ref={elementRef} className="scroll__track" />;
+                  },
+                }}
+                thumbYProps={{
+                  renderer: (props) => {
+                    const { elementRef, ...restProps } = props;
+                    restProps.style = {};
+                    return <div {...restProps} ref={elementRef} className="scroll__thumb" />;
+                  },
+                }}
+              >
+                {/* Заголовок данных */}
+                <p className="player__data-title">
+                  {showText ? 'Текст песни:' : listSongs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
+                </p>
+
+                {/* Содержание данных */}
+                {showText ? (
+                  <p className="player__text">{selectedSong.text}</p>
+                ) : listSongs.length < 2 ? (
+                  <></>
+                ) : (
+                  listSongs
+                )}
+              </Scrollbar>
+            </div>
           </div>
         </div>
       </div>

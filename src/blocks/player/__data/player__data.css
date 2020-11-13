@@ -1,9 +1,9 @@
 .player__data {
   overflow: hidden;
 
-  box-sizing: border-box;
   width: 100%;
   height: 104px;
+  padding-top: 33px;
 
   transition: all ease-in 0.5s;
 
@@ -23,8 +23,16 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .player__data {
+    margin-left: 12px;
+  }
+}
+
+
 @media screen and (max-width: 500px) {
   .player__data {
     height: 80px;
+    margin-left: 0;
   }
 }

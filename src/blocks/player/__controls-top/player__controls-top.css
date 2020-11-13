@@ -5,8 +5,9 @@
   width: 100%;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .player__controls-top {
+    align-items: center;
     flex-direction: column;
   }
 }

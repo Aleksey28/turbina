@@ -4,35 +4,16 @@
   flex-direction: column;
 
   min-width: 240px;
-  /* max-width: 1150px; */
-  margin-right: 20px;
 
   transition: all 0.5s ease;
 }
 
 
-/* @media screen and (max-width: 1280px) {
-  .player__controls-middle {
-    max-width: calc((100vw - 1024px) / (1280 - 1024) * (1150 - 895) + 895px);
-  }
-}
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 600px) {
   .player__controls-middle {
-    max-width: calc((100vw - 768px) / (1024 - 768) * (895 - 640) + 640px);
-  }
-} */
-
-@media screen and (max-width: 768px) {
-  .player__controls-middle {
-    /* max-width: calc((100vw - 550px) / (768 - 550) * (640 - 437) + 437px); */
-    margin-right: calc((100vw - 550px) / (768 - 550) * (20 - 11) + 11px);
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .player__controls-middle {
-    /* max-width: calc((100vw - 320px) / (550 - 320) * (437 - 240) + 240px); */
     flex: none;
+
+    width: 100%;
   }
 }

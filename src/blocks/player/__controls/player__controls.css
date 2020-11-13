@@ -7,9 +7,15 @@
   margin-left: 25px;
 }
 
-@media screen and (max-width: 550px) {
+
+@media screen and (max-width: 768px) {
+  .player__controls {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .player__controls {
     width: 100%;
-    margin: 0;
   }
 }

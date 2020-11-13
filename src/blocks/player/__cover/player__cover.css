@@ -1,4 +1,5 @@
 .player__cover {
+  display: none;
   flex: none;
 
   box-sizing: border-box;
@@ -11,4 +12,25 @@
   background-color:#C4C4C4;
 
   object-fit: cover;
+}
+
+@media screen and (max-width: 1280px) {
+  .player__cover {
+    width: calc((100vw - 1024px) / (1280 - 1024) * (176 - 164) + 164px);
+    height: calc((100vw - 1024px) / (1280 - 1024) * (176 - 164) + 164px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .player__cover {
+    width: calc((100vw - 768px) / (1024 - 768) * (164 - 112) + 112px);
+    height: calc((100vw - 768px) / (1024 - 768) * (164 - 112) + 112px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player__cover {
+    width: 240px;
+    height: 240px;
+  }
 }

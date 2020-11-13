@@ -28,6 +28,10 @@
 @import url(./__link-icon/player__link-icon.css);
 @import url(./__cover/player__cover.css);
 @import url(./__cover/_hidden/player__cover_hidden.css);
+@import url(./__cover/_place/player__cover_place_left.css);
+@import url(./__cover/_place/player__cover_place_top.css);
+@import url(./__cover/_place/player__cover_place_among.css);
+@import url(./__bottom/player__bottom.css);
 
 
 .player {
@@ -56,11 +60,10 @@
 }
 
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .player {
     align-items: center;
-    flex-direction: column;
 
-    padding-right: calc((100vw - 550px) / (768 - 550) * (64 - 44) + 44px);
+    padding-right: 35px;
   }
 }
