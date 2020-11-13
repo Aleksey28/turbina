@@ -29,3 +29,24 @@
 
   font-style: italic;
 }
+
+
+@media screen and (max-width: 768px) {
+  .player__link-video {
+    width: 87px;
+    height: 34px;
+
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player__link-video {
+    width: 74px;
+    height: 31px;
+
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
