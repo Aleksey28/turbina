@@ -8,7 +8,5 @@
 }
 
 .player__data-item:hover {
-  opacity:0.5;
-
   font-style: italic;
 }

@@ -3,7 +3,7 @@ import track2 from '../audio/A-Ha_-_Take_On_Me_47994451.mp3';
 
 export const bakgroundColors = ['rgba(31,24,65,0.9)', 'rgba(32,35,114,0.9)', 'rgba(202,161,169, 0.9)'];
 
-export const listOfSongs = [
+export const data = [
   {
     id: 1,
     name: 'Take On Me',

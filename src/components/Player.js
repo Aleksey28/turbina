@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Song from './Song';
-import { listOfSongs } from '../utils/constants';
+import { data } from '../utils/constants';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 import PlayIcon from './icons/PlayIcon';
@@ -15,7 +15,21 @@ export default function Player() {
   const [minimize, setMinimize] = useState(true);
   const [countdown, setCountdown] = useState(true);
   const [showText, setShowText] = useState(false);
-  const [selectedSong, setSelectedSong] = useState(listOfSongs[0]);
+  const [selectedSong, setSelectedSong] = useState(data[0]);
+  const [listSongs, setListSongs] = useState([]);
+
+  useEffect(() => {
+    setListSongs(
+      data.map((item) => (
+        <Song
+          composition={item}
+          onSongClick={handleClickOnComposition}
+          key={item.id}
+          selectedSong={selectedSong}
+        ></Song>
+      )),
+    );
+  }, [selectedSong]);
 
   // Обработчики событий плеера
 
@@ -181,18 +195,16 @@ export default function Player() {
             >
               {/* Заголовок данных */}
               <p className="player__data-title">
-                {showText ? 'Текст песни:' : listOfSongs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
+                {showText ? 'Текст песни:' : listSongs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
               </p>
 
               {/* Содержание данных */}
               {showText ? (
                 <p className="player__text">{selectedSong.text}</p>
-              ) : listOfSongs.length < 2 ? (
+              ) : listSongs.length < 2 ? (
                 <></>
               ) : (
-                listOfSongs.map((item) => (
-                  <Song composition={item} onSongClick={handleClickOnComposition} key={item.id}></Song>
-                ))
+                listSongs
               )}
             </Scrollbar>
           </div>

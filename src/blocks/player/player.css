@@ -23,6 +23,7 @@
 @import url(./__data-title/player__data-title.css);
 @import url(./__text/player__text.css);
 @import url(./__data-item/player__data-item.css);
+@import url(./__data-item/_selected/player__data-item_selected.css);
 @import url(./__link-video/player__link-video.css);
 @import url(./__link-icon/player__link-icon.css);
 @import url(./__cover/player__cover.css);
