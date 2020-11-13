@@ -1,7 +1,7 @@
 import React from 'react';
-import Form from './Form';
+import Form from './Form.jsx';
 
-export default function Main() {
+export default function Main(props) {
   return (
     <main className="content">
     <section className="content__description">
@@ -24,17 +24,16 @@ export default function Main() {
       и Федя Быстров — Контур.</p>
       <h2 className="content__title">Тезисы</h2>
       <ul className="content__paragraph content__thesis-list">
-        <li className="content__thesis-item">• Дети никогда не прекращают творить и круто стараться быть на них похожими в этом.</li>
+        <li className="content__thesis-item">Дети никогда не прекращают творить и круто стараться быть на них похожими в этом.</li>
         <li className="content__thesis-item">Детское бессознательное помогает родителям понять, что происходит внутри семьи.</li>
-        <li className="content__thesis-item">• Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное 
+        <li className="content__thesis-item">Не существует детской и взрослой поэзии. Существует мысль и чувство, зафиксированное 
         в ней.</li>
-        <li className="content__thesis-item">• Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</li>
+        <li className="content__thesis-item">Дети получают невероятное удовольствие и мотивацию от того, что их творчество востребовано сверстниками и взрослыми.</li>
       </ul>
     </section>
     <section className="content__contacts-form">
-      <Form />
+      <Form onFormSubmit={props.onFormSubmit} />
     </section>
   </main>
   )
 }
-// onFormSubmit={onFormSubmit}

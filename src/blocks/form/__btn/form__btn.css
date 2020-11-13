@@ -1,6 +1,14 @@
 .form__btn {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.25;
   min-height: 60px;
   background: #FFFFFF;
   border: 2px solid #000000;
   border-radius: 30px;
+}
+
+.form__btn:hover {
+  font-style: italic;
 }
