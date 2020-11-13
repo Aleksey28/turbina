@@ -5,6 +5,7 @@ import Link from './Link';
 import LogoIcon from './icons/LogoIcon'
 import CloseIcon from './icons/CloseIcon'
 import { links, streamings } from '../utils/constants'
+import Div100vh from 'react-div-100vh'
 
 function Header() {
   const [isLinksOpen, setIsLinksOpen] = React.useState(false);
@@ -21,6 +22,7 @@ function Header() {
   }
 
   return (
+    <Div100vh>
     <header className="header">
       <div className="header__section">
         <a href={links.marshak} target="_blank" rel="noreferrer">
@@ -49,6 +51,7 @@ function Header() {
       </h1>
       <Player />
     </header>
+    </Div100vh>
   );
 }
 
