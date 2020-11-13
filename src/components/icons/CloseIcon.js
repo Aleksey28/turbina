@@ -3,8 +3,8 @@ import React from 'react';
 function CloseIcon() {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0.707107" y1="1.19231" x2="10.6066" y2="11.0918" stroke="white" stroke-width="2"/>
-      <line x1="10.6075" y1="0.707107" x2="0.708003" y2="10.6066" stroke="white" stroke-width="2"/>
+      <line x1="0.707107" y1="1.19231" x2="10.6066" y2="11.0918" stroke="white" strokeWidth="2"/>
+      <line x1="10.6075" y1="0.707107" x2="0.708003" y2="10.6066" stroke="white" strokeWidth="2"/>
     </svg>
   )
 }
