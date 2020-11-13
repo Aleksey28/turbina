@@ -14,10 +14,10 @@
   }
 }
 
-.form__input_type_agree:focus + .form__pseudo-checkbox {
+.form__checkbox-hidden:focus + .form__pseudo-checkbox {
   box-shadow: 0 0 5px #E5E5E5;
 }
 
-.form__input_type_agree:checked + .form__pseudo-checkbox {
+.form__checkbox-hidden:checked + .form__pseudo-checkbox {
   background-color: #000000;
 }
