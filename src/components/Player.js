@@ -182,7 +182,7 @@ export default function Player() {
         Поэтому проще поместить в другой блок, т.к. по умолчани Scrollbar имеет 100% размера родителя.*/}
               <Scrollbar
                 // noDefaultStyles="true"
-                className={cn('player__data', { player__data_minimize: minimize })}
+                className={cn({ player__data_minimize: minimize })}
                 trackYProps={{
                   renderer: (props) => {
                     const { elementRef, ...restProps } = props;
