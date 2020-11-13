@@ -1,0 +1,13 @@
+.player__controls-top {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .player__controls-top {
+    align-items: center;
+    flex-direction: column;
+  }
+}

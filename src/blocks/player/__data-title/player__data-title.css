@@ -1,10 +1,7 @@
-.player__song-time {
-  margin: 0;
-  margin-left: 20px;
+.player__data-title {
+  overflow: hidden;
 
-  cursor: pointer;
-  transition: opacity ease-in 0.3s;
-  text-align: right;
+  margin: 0 0 18px;
 
   color: #FFFFFF;
 
@@ -15,21 +12,15 @@
   line-height: 24px;
 }
 
-.player__song-time:hover {
-  opacity: 0.5;
-
-  font-style: italic;
-}
-
 @media screen and (max-width: 1024px) {
-  .player__song-time {
+  .player__data-title {
     font-size: 18px;
     line-height: 22px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .player__song-time {
+@media screen and (max-width: 600px) {
+  .player__data-title {
     font-size: 14px;
     line-height: 19px;
   }

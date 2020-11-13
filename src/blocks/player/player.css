@@ -1,23 +1,37 @@
 @import url(./__btn/player__btn.css);
-@import url(./__header/player__header.css);
-@import url(./__header/_minimize/player__header_minimize.css);
-@import url(./__title/player__title.css);
+@import url(./__controls/player__controls.css);
+@import url(./__controls/_minimize/player__controls_minimize.css);
+@import url(./__controls-top/player__controls-top.css);
+@import url(./__controls-center/player__controls-center.css);
+@import url(./__controls-left/player__controls-left.css);
+@import url(./__controls-middle/player__controls-middle.css);
+@import url(./__controls-middle/_mininize/player__controls-middle_minimize.css);
+@import url(./__controls-right/player__controls-right.css);
+@import url(./__controls-right/_mininize/player__controls-right_minimize.css);
 @import url(./__btn/_action/player__btn_action_play.css);
 @import url(./__btn/_action/player__btn_action_stop.css);
 @import url(./__btn/_action/player__btn_action_minimize.css);
 @import url(./__btn/_action/player__btn_action_maximize.css);
 @import url(./__btn/_action/player__btn_action_extra.css);
 @import url(./__btn/_hidden/player__btn_hidden.css);
-@import url(./__song-description/player__song-description.css);
 @import url(./__song-name/player__song-name.css);
+@import url(./__song-feat/player__song-feat.css);
 @import url(./__song-time/player__song-time.css);
 @import url(./__song/player__song.css);
-@import url(./__song/_minimize/player__song_minimize.css);
-@import url(./__body/player__body.css);
-@import url(./__body/_minimize/player__body_minimize.css);
-@import url(./__body-title/player__body-title.css);
+@import url(./__data/player__data.css);
+@import url(./__data/_minimize/player__data_minimize.css);
+@import url(./__data-title/player__data-title.css);
 @import url(./__text/player__text.css);
-@import url(./__composition/player__composition.css);
+@import url(./__data-item/player__data-item.css);
+@import url(./__data-item/_selected/player__data-item_selected.css);
+@import url(./__link-video/player__link-video.css);
+@import url(./__link-icon/player__link-icon.css);
+@import url(./__cover/player__cover.css);
+@import url(./__cover/_hidden/player__cover_hidden.css);
+@import url(./__cover/_place/player__cover_place_left.css);
+@import url(./__cover/_place/player__cover_place_top.css);
+@import url(./__cover/_place/player__cover_place_among.css);
+@import url(./__bottom/player__bottom.css);
 
 
 .player {
@@ -25,18 +39,31 @@
   bottom: 0;
 
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 
   box-sizing: border-box;
   width: 100%;
-  min-width: 100%;
   min-height: 42px;
-  padding: 0 24px 22px;
+  padding: 0 64px 22px 24px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 1280px) {
   .player {
-    padding: 0 10px 22px;
+    padding-bottom: calc((100vw - 1024px) / (1280 - 1024) * (22 - 19) + 19px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .player {
+    padding-bottom: 19px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .player {
+    align-items: center;
+
+    padding-right: 35px;
   }
 }
