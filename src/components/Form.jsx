@@ -92,7 +92,6 @@ export default function Form(props) {
 
     function handleFocusOut(e) {
       const { name } = e.target;
-      console.log(name);
       if (name === 'userName') {
         setUserNameDirty(true);
       }
