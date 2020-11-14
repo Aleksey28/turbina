@@ -1,3 +1,4 @@
+import React from 'react';
 import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
@@ -8,13 +9,21 @@ import Ripple from './Ripple';
 
 function App() {
   const [firstColor, secondColor, thirdColor] = bakgroundColors;
+  const [isSpinnerLoading, setIsSpinnerLoading] = React.useState(false);
+  const [isSubmitError, setIsSubmitError] = React.useState(false);
 
-  function handleFormSubmit({ name, phone, email, text }) {
-    console.log(name, phone, email, text);
+  function handleFormSubmit(data) {
+    setIsSpinnerLoading(true);
     api
-      .addLyrics({ name, phone, email, text })
+      .addLyrics(data)
       .then((data) => {})
-      .catch((err) => console.log(`Error ${err}`));
+      .catch((err) => {
+        console.log(`Error ${err}`);
+        setIsSubmitError(true);
+      })
+      .finally(() => {
+        setIsSpinnerLoading(false);
+      });
   }
 
   return (
@@ -26,7 +35,7 @@ function App() {
         }}
       >
         <Header />
-        <Main onFormSubmit={handleFormSubmit} />
+        <Main onFormSubmit={handleFormSubmit} isLoading={isSpinnerLoading} isSubmitError={isSubmitError} />
         <Footer />
       </div>
     </Ripple>
