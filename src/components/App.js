@@ -6,7 +6,6 @@ import { bakgroundColors } from '../utils/constants';
 import { api } from '../utils/api';
 
 import Ripple from './Ripple';
-// import Ripple from './Ripple/Ripple';
 
 function App() {
   const [firstColor, secondColor, thirdColor] = bakgroundColors;
@@ -15,17 +14,16 @@ function App() {
 
   function handleFormSubmit(data) {
     setIsSpinnerLoading(true);
-    api.addLyrics(data)
-    .then((data) => {
-      ;
-    })
-    .catch(err => {
-      console.log(`Error ${err}`);
-      setIsSubmitError(true);
-    })
-    .finally(() => {
-      setIsSpinnerLoading(false);
-    });
+    api
+      .addLyrics(data)
+      .then((data) => {})
+      .catch((err) => {
+        console.log(`Error ${err}`);
+        setIsSubmitError(true);
+      })
+      .finally(() => {
+        setIsSpinnerLoading(false);
+      });
   }
 
   return (

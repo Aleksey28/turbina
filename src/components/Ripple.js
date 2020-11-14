@@ -1,11 +1,13 @@
 import React from 'react';
 import { uid } from 'react-uid';
+import cn from 'classnames';
 
 export default function Ripple({
   duration = 850,
   firstColor = 'rgba(44,94,121,1)',
   secondColor = 'rgba(212,159,177,1)',
   size = 100,
+  blur = false,
   children,
 }) {
   const [rippleArray, setRippleArray] = React.useState([]);
@@ -39,7 +41,7 @@ export default function Ripple({
   };
 
   return (
-    <div className="page-ripple" onMouseDown={addRipple}>
+    <div className={cn('page-ripple', { 'page-ripple_blur': !blur })} onMouseDown={addRipple}>
       {rippleArray.length
         ? rippleArray.map((ripple, index) => {
             return (
