@@ -86,22 +86,6 @@ export default function Form(props) {
     (e) => {
       const { name, value } = e.target;
       setFormValues((prevState) => ({ ...prevState, [name]: value })); // объект меняется при каждом изменении, в setFormValues возвращаем этот новый объект, кот состоит из старых и нового перезаписанного поля
-
-      // if (name === 'userName') {
-      //   setUserNameDirty(true);
-      // }
-
-      // if (name === 'userPhone') {
-      //   setUserPhoneDirty(true);
-      // }
-
-      // if (name === 'userEmail') {
-      //   setUserEmailDirty(true);
-      // }
-
-      // if (name === 'userText') {
-      //   setUserTextDirty(true);
-      // }
     },
     [setFormValues],
   );
