@@ -5,18 +5,16 @@ import { bakgroundColors } from '../utils/constants';
 import { api } from '../utils/api';
 
 import Ripple from './Ripple';
-// import Ripple from './Ripple/Ripple';
 
 function App() {
   const [firstColor, secondColor, thirdColor] = bakgroundColors;
 
   function handleFormSubmit({ name, phone, email, text }) {
     console.log(name, phone, email, text);
-    api.addLyrics({ name, phone, email, text })
-    .then((data) => {
-      ;
-    })
-    .catch(err => console.log(`Error ${err}`));
+    api
+      .addLyrics({ name, phone, email, text })
+      .then((data) => {})
+      .catch((err) => console.log(`Error ${err}`));
   }
 
   return (

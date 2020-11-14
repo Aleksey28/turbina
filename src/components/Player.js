@@ -6,7 +6,7 @@ import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 import PlayIcon from './icons/PlayIcon';
 
-export default function Player() {
+export default function Player({ onSetBlur }) {
   const refPlayer = useRef(null);
   const refNameSong = useRef(null);
 
@@ -82,6 +82,7 @@ export default function Player() {
 
   const handleClickMinimize = () => {
     setMinimize(!minimize);
+    onSetBlur(minimize);
   };
 
   return (
