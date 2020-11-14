@@ -1,0 +1,19 @@
+.player__controls-middle {
+  display: flex;
+  flex: 1 1 1150px;
+  flex-direction: column;
+
+  min-width: 240px;
+
+  transition: all 0.5s ease;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .player__controls-middle {
+    flex: none;
+
+    width: 100%;
+  }
+}

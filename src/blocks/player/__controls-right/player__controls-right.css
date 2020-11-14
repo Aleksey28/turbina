@@ -1,0 +1,13 @@
+.player__controls-right {
+  display: flex;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .player__controls-right {
+    width: 100%;
+    padding-top: 20px;
+  }
+}

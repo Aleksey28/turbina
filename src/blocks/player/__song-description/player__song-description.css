@@ -1,8 +1,0 @@
-.player__song-description {
-  display: flex;
-  overflow: hidden;
-  justify-content: space-between;
-
-  width: 100%;
-  margin-bottom: 12px;
-}

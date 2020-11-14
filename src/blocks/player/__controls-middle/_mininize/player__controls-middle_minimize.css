@@ -1,0 +1,17 @@
+.player__controls-middle_minimize {
+  margin-right: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .player__controls-middle_minimize {
+    margin-right: calc((100vw - 550px) / (768 - 550) * (20 - 11) + 11px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player__controls-middle_minimize {
+    height: 41px;
+    margin-bottom: 12px;
+  }
+}

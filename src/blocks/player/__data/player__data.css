@@ -1,0 +1,38 @@
+.player__data {
+  overflow: hidden;
+
+  width: 100%;
+  height: 104px;
+  padding-top: 33px;
+
+  transition: all ease-in 0.5s;
+
+  border: none;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .player__data {
+    height: calc((100vw - 1024px) / (1280 - 1024) * (104 - 96) + 96px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .player__data {
+    height: 96px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player__data {
+    margin-left: 12px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .player__data {
+    height: 80px;
+    margin-left: 0;
+  }
+}

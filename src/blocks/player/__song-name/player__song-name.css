@@ -1,6 +1,7 @@
 .player__song-name {
   overflow: hidden;
 
+  width: 100%;
   margin: 0;
 
   white-space:nowrap;
@@ -8,10 +9,10 @@
   color: #FFFFFF;
 
   font-family: 'Inter', Helvetica, Arial, sans-serif;
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: normal;
   font-style: normal;
-  line-height: 27px;
+  line-height: 24px;
 }
 
 @media screen and (max-width: 1024px) {

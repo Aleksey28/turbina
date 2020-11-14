@@ -1,0 +1,12 @@
+.player__data-item {
+  overflow: hidden;
+
+  margin: 0 0 12px;
+
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.player__data-item:hover {
+  font-style: italic;
+}
