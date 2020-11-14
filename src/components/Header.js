@@ -6,11 +6,15 @@ import LogoIcon from './icons/LogoIcon';
 import CloseIcon from './icons/CloseIcon';
 import { links, streamings } from '../utils/constants';
 import cn from 'classnames';
+import { use100vh } from 'react-div-100vh'
 
 function Header({ onSetBlur }) {
   const [isLinksOpen, setIsLinksOpen] = React.useState(false);
   const [isButtonVisible, setIsButtonVisible] = React.useState(true);
   const [blurOn, setBlueOn] = React.useState(false);
+  const height = use100vh()
+  const headerHeight = height ? `${height - 10}px` : '100vh'
+
 
   const handleSetBlur = (value) => {
     setBlueOn(value);
@@ -27,7 +31,7 @@ function Header({ onSetBlur }) {
   };
 
   return (
-    <header className="header">
+    <header className="header" style={{ height: headerHeight }}>
       <div className={cn('header__blur', { header__blur_hidden: !blurOn })}>
         <div className="header__section">
           <a href={links.marshak} target="_blank" rel="noreferrer">
