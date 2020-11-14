@@ -86,7 +86,12 @@ export default function Form(props) {
     (e) => {
       const { name, value } = e.target;
       setFormValues((prevState) => ({ ...prevState, [name]: value })); // объект меняется при каждом изменении, в setFormValues возвращаем этот новый объект, кот состоит из старых и нового перезаписанного поля
+    },
+    [setFormValues],
+  );
 
+    function handleFocusOut(e) {
+      const { name } = e.target;
       if (name === 'userName') {
         setUserNameDirty(true);
       }
@@ -102,9 +107,7 @@ export default function Form(props) {
       if (name === 'userText') {
         setUserTextDirty(true);
       }
-    },
-    [setFormValues],
-  );
+    }
 
   React.useEffect(
     function validateInputs() {
@@ -189,6 +192,7 @@ export default function Form(props) {
           maxLength="40"
           required
           onChange={handleInputChange}
+          onBlur={handleFocusOut}
         />
         {userNameDirty && errors.userName.required && <span className="form__error">Заполните это поле</span>}
         {userNameDirty && errors.userName.minLength && (
@@ -204,6 +208,7 @@ export default function Form(props) {
           maxLength="18"
           required
           onChange={handleInputChange}
+          onBlur={handleFocusOut}
         />
         {userPhoneDirty && errors.userPhone.required && <span className="form__error">Заполните это поле</span>}
         {userPhoneDirty && errors.userPhone.containNumbers && (
@@ -222,6 +227,7 @@ export default function Form(props) {
           maxLength="30"
           required
           onChange={handleInputChange}
+          onBlur={handleFocusOut}
         />
         {userEmailDirty && errors.userEmail.required && <span className="form__error">Заполните это поле</span>}
         {userEmailDirty && errors.userEmail.minLength && (
@@ -237,6 +243,7 @@ export default function Form(props) {
           maxLength="10000"
           required
           onChange={handleInputChange}
+          onBlur={handleFocusOut}
         ></textarea>
         {userTextDirty && errors.userText.required && <span className="form__error">Заполните это поле</span>}
         {userTextDirty && errors.userText.minLength && (
