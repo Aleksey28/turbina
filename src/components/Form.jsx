@@ -257,11 +257,18 @@ export default function Form(props) {
           type="submit"
           className="form__btn form__cursor"
           disabled={isSubmitDisabled}
-          children={isFormSubmitted ? `Ура, форма отправлена!` : `Отправить форму`}
+          children={isFormSubmitted && !props.isSubmitError ? `Ура, форма отправлена!` : `Отправить форму`}
         ></button>
-        <span className="form__error-btn_visible">
-          Упс, что-то пошло не&nbsp;так и&nbsp;форма не&nbsp;отправилась, попробуйте ещё раз!
-        </span>
+        {props.isSubmitError && (
+          <span className="form__error-btn_visible">
+            Упс, что-то пошло не&nbsp;так и&nbsp;форма не&nbsp;отправилась, попробуйте ещё раз!
+          </span>
+        )}
+        {props.isLoading && (
+          <div className="spinner">
+            <i></i>
+          </div>
+        )}
       </form>
     </>
   );

@@ -32,7 +32,7 @@ export default function Main(props) {
       </ul>
     </section>
     <section className="content__contacts-form">
-      <Form onFormSubmit={props.onFormSubmit} />
+      <Form onFormSubmit={props.onFormSubmit} isSubmitError={props.isSubmitError} isLoading={props.isLoading} />
     </section>
   </main>
   )
