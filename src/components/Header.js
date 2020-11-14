@@ -5,9 +5,11 @@ import Link from './Link';
 import LogoIcon from './icons/LogoIcon'
 import CloseIcon from './icons/CloseIcon'
 import { links, streamings } from '../utils/constants'
-import Div100vh from 'react-div-100vh'
+import { use100vh } from 'react-div-100vh'
 
 function Header() {
+  const height = use100vh()
+  const headerHeight = height ? `${height - 10}px` : '100vh'
   const [isLinksOpen, setIsLinksOpen] = React.useState(false);
   const [isButtonVisible, setIsButtonVisible] = React.useState(true);
 
@@ -22,8 +24,8 @@ function Header() {
   }
 
   return (
-    <Div100vh>
-    <header className="header">
+
+    <header className="header" style={{ height: headerHeight }}>
       <div className="header__section">
         <a href={links.marshak} target="_blank" rel="noreferrer">
           <LogoIcon />
@@ -51,7 +53,6 @@ function Header() {
       </h1>
       <Player />
     </header>
-    </Div100vh>
   );
 }
 
