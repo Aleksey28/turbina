@@ -1,9 +1,7 @@
 
 @keyframes ripple {
-  30% {
-    transform: scale(2);
-  }
-  60% {
+  /* Делаем задержку состояния элемента с 30% до 60%  */
+  30%,60% {
     transform: scale(2);
   }
 }
