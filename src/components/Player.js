@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Song from './Song';
 import Cover from './Cover';
 import { data } from '../utils/constants';
@@ -41,11 +41,7 @@ export default function Player({ onSetBlur }) {
 
   //Обработчики событий команд
   const handleClickPlay = () => {
-    if (!isPlaying) {
-      refPlayer.current.play();
-    } else {
-      refPlayer.current.pause();
-    }
+    !isPlaying ? refPlayer.current.play() : refPlayer.current.pause();
     setIsPlaying(!isPlaying);
   };
 
@@ -254,12 +250,8 @@ function offsetLeft(el) {
 
 // Функция проверки вместимости элемента в родительский блок
 const isOverflow = (ref) => {
-  if (!!ref) {
-    return (
-      ref.offsetWidth - (ref.classList.contains('marquee') ? ref.parentElement.offsetWidth : 0) >
-      ref.parentElement.offsetWidth
-    );
-  } else {
-    return false;
-  }
+  return !!ref
+    ? ref.offsetWidth - (ref.classList.contains('marquee') ? ref.parentElement.offsetWidth : 0) >
+        ref.parentElement.offsetWidth
+    : false;
 };
