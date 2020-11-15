@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.43584186.chunk.css",
-    "main.js": "./static/js/main.b0c28edb.chunk.js",
-    "main.js.map": "./static/js/main.b0c28edb.chunk.js.map",
+    "main.js": "./static/js/main.932bcb1e.chunk.js",
+    "main.js.map": "./static/js/main.932bcb1e.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.e21c5afe.js",
     "runtime-main.js.map": "./static/js/runtime-main.e21c5afe.js.map",
-    "static/js/2.8b277c3f.chunk.js": "./static/js/2.8b277c3f.chunk.js",
-    "static/js/2.8b277c3f.chunk.js.map": "./static/js/2.8b277c3f.chunk.js.map",
+    "static/js/2.4189ca33.chunk.js": "./static/js/2.4189ca33.chunk.js",
+    "static/js/2.4189ca33.chunk.js.map": "./static/js/2.4189ca33.chunk.js.map",
     "index.html": "./index.html",
     "static/css/main.43584186.chunk.css.map": "./static/css/main.43584186.chunk.css.map",
-    "static/js/2.8b277c3f.chunk.js.LICENSE.txt": "./static/js/2.8b277c3f.chunk.js.LICENSE.txt",
+    "static/js/2.4189ca33.chunk.js.LICENSE.txt": "./static/js/2.4189ca33.chunk.js.LICENSE.txt",
     "static/media/A-Ha_-_Take_On_Me_47994451.3403731f.mp3": "./static/media/A-Ha_-_Take_On_Me_47994451.3403731f.mp3",
     "static/media/index.css": "./static/media/rippleBGv1.812dc3f2.svg",
     "static/media/Wham_-_Last_Christmas_58001048.5d703f8d.mp3": "./static/media/Wham_-_Last_Christmas_58001048.5d703f8d.mp3",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e21c5afe.js",
-    "static/js/2.8b277c3f.chunk.js",
+    "static/js/2.4189ca33.chunk.js",
     "static/css/main.43584186.chunk.css",
-    "static/js/main.b0c28edb.chunk.js"
+    "static/js/main.932bcb1e.chunk.js"
   ]
 }
