@@ -6,7 +6,7 @@ import LogoIcon from './icons/LogoIcon';
 import CloseIcon from './icons/CloseIcon';
 import { links, streamings } from '../utils/constants';
 import cn from 'classnames';
-import { use100vh } from 'react-div-100vh'
+import { use100vh } from 'react-div-100vh';
 
 function Header({ onSetBlur }) {
   const [isLinksOpen, setIsLinksOpen] = React.useState(false);
@@ -38,12 +38,13 @@ function Header({ onSetBlur }) {
             <LogoIcon />
           </a>
           <button
-            className={`link link_streaming ${!isButtonVisible && `link_streaming-hidden`} `}
+            className={cn('link link_streaming', { 'link_streaming-hidden': !isButtonVisible })}
             onClick={handleClick}
           >
             Стриминги
           </button>
-          <div className={`header__links ${isLinksOpen && `header__links_visible`} `}>
+          <div className={cn('header__links', { header__links_visible: isLinksOpen })}>
+
             <button className="header__links-close" onClick={handleClose}>
               <CloseIcon />
             </button>

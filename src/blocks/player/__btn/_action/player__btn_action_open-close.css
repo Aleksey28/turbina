@@ -1,13 +1,11 @@
-.player__btn_action_maximize {
+.player__btn_action_open-close {
   position: absolute;
   top: 3px;
   right: 22px;
-
-  background-image: url(../../../../images/btn-unwrap.svg);
 }
 
 @media screen and (max-width: 768px) {
-  .player__btn_action_maximize {
+  .player__btn_action_open-close {
     right: calc((100vw - 320px) / (768 - 320) * (22 - 13) + 13px);
   }
 }
