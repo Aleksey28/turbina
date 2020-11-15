@@ -5,6 +5,9 @@ import { data } from '../utils/constants';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 import PlayIcon from './icons/PlayIcon';
+import StopIcon from './icons/StopIcon';
+import WrapIcon from './icons/WrapIcon';
+import UnwrapIcon from './icons/UnwrapIcon';
 
 export default function Player({ onSetBlur }) {
   const refPlayer = useRef(null);
@@ -106,11 +109,9 @@ export default function Player({ onSetBlur }) {
         {/* Левая часть блока контроля */}
         <div className="player__controls-left">
           {/* Свитчер кнопки запуска и остановки воспроизведения */}
-          <button
-            type="button"
-            className={cn('player__btn', { player__btn_action_play: !isPlaying, player__btn_action_stop: isPlaying })}
-            onClick={handleClickPlay}
-          ></button>
+          <button type="button" className="player__btn" onClick={handleClickPlay}>
+            {isPlaying ? <StopIcon className="player__btn-icon" /> : <PlayIcon className="player__btn-icon" />}
+          </button>
         </div>
 
         <div className="player__controls-center">
@@ -218,14 +219,9 @@ export default function Player({ onSetBlur }) {
         </div>
       </div>
       {/* Свитчер раскрытия и закрытия полной формы */}
-      <button
-        type="button"
-        className={cn('player__btn', {
-          player__btn_action_minimize: !minimize,
-          player__btn_action_maximize: minimize,
-        })}
-        onClick={handleClickMinimize}
-      ></button>
+      <button type="button" className="player__btn player__btn_action_open-close" onClick={handleClickMinimize}>
+        {minimize ? <UnwrapIcon className="player__btn-icon" /> : <WrapIcon className="player__btn-icon" />}
+      </button>
     </div>
   );
 }

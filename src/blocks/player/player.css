@@ -8,10 +8,7 @@
 @import url(./__controls-middle/_mininize/player__controls-middle_minimize.css);
 @import url(./__controls-right/player__controls-right.css);
 @import url(./__controls-right/_mininize/player__controls-right_minimize.css);
-@import url(./__btn/_action/player__btn_action_play.css);
-@import url(./__btn/_action/player__btn_action_stop.css);
-@import url(./__btn/_action/player__btn_action_minimize.css);
-@import url(./__btn/_action/player__btn_action_maximize.css);
+@import url(./__btn/_action/player__btn_action_open-close.css);
 @import url(./__btn/_action/player__btn_action_extra.css);
 @import url(./__btn/_hidden/player__btn_hidden.css);
 @import url(./__song-name/player__song-name.css);
@@ -32,6 +29,7 @@
 @import url(./__cover/_place/player__cover_place_top.css);
 @import url(./__cover/_place/player__cover_place_among.css);
 @import url(./__bottom/player__bottom.css);
+@import url(./__btn-icon/player__btn-icon.css);
 
 
 .player {
