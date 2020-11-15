@@ -50,6 +50,7 @@ export default function Player({ onSetBlur }) {
 
   const handlePlayerEnded = () => {
     setIsPlaying(!isPlaying);
+    setProgress(0);
   };
 
   //Обработчики событий команд
