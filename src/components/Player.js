@@ -85,7 +85,7 @@ export default function Player({ onSetBlur }) {
       </audio>
 
       {/* Обложка трека */}
-      <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_top" />
+      <Cover link={selectedSong.cover} minimize={minimize} addModifier="player__cover_place_top" />
 
       {/* Блок контроля текущей композицией */}
       <div className={cn('player__controls', { player__controls_minimize: minimize })}>
@@ -135,7 +135,7 @@ export default function Player({ onSetBlur }) {
               </div>
             </div>
 
-            <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_among" />
+            <Cover link={selectedSong.cover} minimize={minimize} addModifier="player__cover_place_among" />
 
             {/* Правый блок контроля */}
             <div className={cn('player__controls-right', { 'player__controls-right_minimize': minimize })}>
@@ -159,7 +159,7 @@ export default function Player({ onSetBlur }) {
           </div>
 
           <div className="player__bottom">
-            <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_left" />
+            <Cover link={selectedSong.cover} minimize={minimize} addModifier="player__cover_place_left" />
 
             {/* Блок списка песен и текстов песен */}
             <div className={cn('player__data', { player__data_minimize: minimize })}>
