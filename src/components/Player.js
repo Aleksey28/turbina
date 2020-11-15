@@ -20,20 +20,6 @@ export default function Player({ onSetBlur }) {
   const [countdown, setCountdown] = useState(true);
   const [showText, setShowText] = useState(false);
   const [selectedSong, setSelectedSong] = useState(data[0]);
-  const [listSongs, setListSongs] = useState([]);
-
-  useEffect(() => {
-    setListSongs(
-      data.map((item) => (
-        <Song
-          composition={item}
-          onSongClick={handleClickOnComposition}
-          key={item.id}
-          selectedSong={selectedSong}
-        ></Song>
-      )),
-    );
-  }, [selectedSong]);
 
   // Обработчики событий плеера
 
@@ -203,16 +189,22 @@ export default function Player({ onSetBlur }) {
               >
                 {/* Заголовок данных */}
                 <p className="player__data-title">
-                  {showText ? 'Текст песни:' : listSongs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
+                  {showText ? 'Текст песни:' : data.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
                 </p>
 
                 {/* Содержание данных */}
                 {showText ? (
                   <p className="player__text">{selectedSong.text}</p>
-                ) : listSongs.length < 2 ? (
-                  <></>
                 ) : (
-                  listSongs
+                  data.length > 1 &&
+                  data.map((item) => (
+                    <Song
+                      composition={item}
+                      onSongClick={handleClickOnComposition}
+                      key={item.id}
+                      selectedSong={selectedSong}
+                    ></Song>
+                  ))
                 )}
               </Scrollbar>
             </div>
