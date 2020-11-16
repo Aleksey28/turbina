@@ -1,10 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Song from './Song';
 import Cover from './Cover';
 import { data } from '../utils/constants';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 import PlayIcon from './icons/PlayIcon';
+import StopIcon from './icons/StopIcon';
+import WrapIcon from './icons/WrapIcon';
+import UnwrapIcon from './icons/UnwrapIcon';
+import { formatTime, offsetLeft, isOverflow } from '../utils/functions';
 
 export default function Player({ onSetBlur }) {
   const refPlayer = useRef(null);
@@ -17,20 +21,6 @@ export default function Player({ onSetBlur }) {
   const [countdown, setCountdown] = useState(true);
   const [showText, setShowText] = useState(false);
   const [selectedSong, setSelectedSong] = useState(data[0]);
-  const [listSongs, setListSongs] = useState([]);
-
-  useEffect(() => {
-    setListSongs(
-      data.map((item) => (
-        <Song
-          composition={item}
-          onSongClick={handleClickOnComposition}
-          key={item.id}
-          selectedSong={selectedSong}
-        ></Song>
-      )),
-    );
-  }, [selectedSong]);
 
   // Обработчики событий плеера
 
@@ -47,15 +37,12 @@ export default function Player({ onSetBlur }) {
 
   const handlePlayerEnded = () => {
     setIsPlaying(!isPlaying);
+    setProgress(0);
   };
 
   //Обработчики событий команд
   const handleClickPlay = () => {
-    if (!isPlaying) {
-      refPlayer.current.play();
-    } else {
-      refPlayer.current.pause();
-    }
+    !isPlaying ? refPlayer.current.play() : refPlayer.current.pause();
     setIsPlaying(!isPlaying);
   };
 
@@ -99,18 +86,16 @@ export default function Player({ onSetBlur }) {
       </audio>
 
       {/* Обложка трека */}
-      <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_top" />
+      <Cover link={selectedSong.cover} minimize={minimize} place="player__cover_place_top" />
 
       {/* Блок контроля текущей композицией */}
       <div className={cn('player__controls', { player__controls_minimize: minimize })}>
         {/* Левая часть блока контроля */}
         <div className="player__controls-left">
           {/* Свитчер кнопки запуска и остановки воспроизведения */}
-          <button
-            type="button"
-            className={cn('player__btn', { player__btn_action_play: !isPlaying, player__btn_action_stop: isPlaying })}
-            onClick={handleClickPlay}
-          ></button>
+          <button type="button" className="player__btn" onClick={handleClickPlay}>
+            {isPlaying ? <StopIcon className="player__btn-icon" /> : <PlayIcon className="player__btn-icon" />}
+          </button>
         </div>
 
         <div className="player__controls-center">
@@ -151,7 +136,7 @@ export default function Player({ onSetBlur }) {
               </div>
             </div>
 
-            <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_among" />
+            <Cover link={selectedSong.cover} minimize={minimize} place="player__cover_place_among" />
 
             {/* Правый блок контроля */}
             <div className={cn('player__controls-right', { 'player__controls-right_minimize': minimize })}>
@@ -175,7 +160,7 @@ export default function Player({ onSetBlur }) {
           </div>
 
           <div className="player__bottom">
-            <Cover link={selectedSong.cover} minimize={minimize} addClass="player__cover_place_left" />
+            <Cover link={selectedSong.cover} minimize={minimize} place="player__cover_place_left" />
 
             {/* Блок списка песен и текстов песен */}
             <div className={cn('player__data', { player__data_minimize: minimize })}>
@@ -201,16 +186,22 @@ export default function Player({ onSetBlur }) {
               >
                 {/* Заголовок данных */}
                 <p className="player__data-title">
-                  {showText ? 'Текст песни:' : listSongs.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
+                  {showText ? 'Текст песни:' : data.length < 2 ? 'Пока что у нас только 1 релиз.' : 'Релизы:'}
                 </p>
 
                 {/* Содержание данных */}
                 {showText ? (
                   <p className="player__text">{selectedSong.text}</p>
-                ) : listSongs.length < 2 ? (
-                  <></>
                 ) : (
-                  listSongs
+                  data.length > 1 &&
+                  data.map((item) => (
+                    <Song
+                      composition={item}
+                      onSongClick={handleClickOnComposition}
+                      key={item.id}
+                      selectedSong={selectedSong}
+                    ></Song>
+                  ))
                 )}
               </Scrollbar>
             </div>
@@ -218,59 +209,9 @@ export default function Player({ onSetBlur }) {
         </div>
       </div>
       {/* Свитчер раскрытия и закрытия полной формы */}
-      <button
-        type="button"
-        className={cn('player__btn', {
-          player__btn_action_minimize: !minimize,
-          player__btn_action_maximize: minimize,
-        })}
-        onClick={handleClickMinimize}
-      ></button>
+      <button type="button" className="player__btn player__btn_action_open-close" onClick={handleClickMinimize}>
+        {minimize ? <UnwrapIcon className="player__btn-icon" /> : <WrapIcon className="player__btn-icon" />}
+      </button>
     </div>
   );
 }
-
-// Функция форматирования секунд
-function formatTime(s) {
-  if (!s && s !== 0) {
-    return '00:00';
-  }
-
-  const totalSeconds = Math.floor(s);
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor(totalSeconds / 60) - hours * 60;
-  const seconds = totalSeconds - minutes * 60 - hours * 3600;
-
-  if (hours) {
-    return `${hours}:${minutes}:${format2Number(seconds)}`;
-  }
-
-  return `${minutes}:${format2Number(seconds)}`;
-}
-
-// Функция форматирования до двух знаяков числа
-function format2Number(num) {
-  return ('0' + num).slice(-2);
-}
-
-// Функция подсчета расстояния до края страницы
-function offsetLeft(el) {
-  var left = 0;
-  while (el && el !== document) {
-    left += el.offsetLeft;
-    el = el.offsetParent;
-  }
-  return left;
-}
-
-// Функция проверки вместимости элемента в родительский блок
-const isOverflow = (ref) => {
-  if (!!ref) {
-    return (
-      ref.offsetWidth - (ref.classList.contains('marquee') ? ref.parentElement.offsetWidth : 0) >
-      ref.parentElement.offsetWidth
-    );
-  } else {
-    return false;
-  }
-};

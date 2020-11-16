@@ -22,13 +22,6 @@
   font-style: italic;
 }
 
-@media screen and (max-width: 1280px) {
-  .player__btn_action_extra {
-    width: calc((100vw - 1024px) / (1280 - 1024) * (135 - 125) + 125px);
-  }
-}
-
-
 @media screen and (max-width: 1024px) {
   .player__btn_action_extra {
     width: 125px;
