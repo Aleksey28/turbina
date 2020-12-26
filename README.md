@@ -26,6 +26,6 @@ https://aleksey28.github.io/turbina/
 
 В разработке приняли участие:
 
-https://github.com/Aleksey28
-https://github.com/kvitkina
-https://github.com/Kalibryyy
+- https://github.com/Aleksey28
+- https://github.com/kvitkina
+- https://github.com/Kalibryyy
