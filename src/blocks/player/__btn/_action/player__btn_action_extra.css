@@ -1,0 +1,43 @@
+.player__btn_action_extra {
+  box-sizing: border-box;
+  width: 135px;
+  min-width: 0;
+  height: 35px;
+  min-height: 0;
+
+  text-align: center;
+
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 19px;
+}
+
+.player__btn_action_extra:hover {
+  font-style: italic;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__btn_action_extra {
+    width: 125px;
+
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player__btn_action_extra {
+    width: 100%;
+    height: 31px;
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

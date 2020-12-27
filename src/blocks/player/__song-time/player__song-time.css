@@ -1,0 +1,36 @@
+.player__song-time {
+  margin: 0;
+  margin-left: 20px;
+
+  cursor: pointer;
+  transition: opacity ease-in 0.3s;
+  text-align: right;
+
+  color: #FFFFFF;
+
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+}
+
+.player__song-time:hover {
+  opacity: 0.5;
+
+  font-style: italic;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__song-time {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .player__song-time {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

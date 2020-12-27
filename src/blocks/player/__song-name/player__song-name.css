@@ -1,0 +1,30 @@
+.player__song-name {
+  overflow: hidden;
+
+  width: 100%;
+  margin: 0;
+
+  white-space:nowrap;
+
+  color: #FFFFFF;
+
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__song-name {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .player__song-name {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

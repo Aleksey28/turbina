@@ -1,0 +1,27 @@
+.player__data-title {
+  overflow: hidden;
+
+  margin: 0 0 18px;
+
+  color: #FFFFFF;
+
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__data-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player__data-title {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

@@ -1,0 +1,24 @@
+.content__contacts-form {
+  margin-left: 50px;
+  margin-top: 90px;
+  margin-bottom: 110px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content__contacts-form {
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content__contacts-form {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content__contacts-form {
+    margin: 60px 20px 80px;
+  }
+}

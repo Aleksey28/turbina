@@ -1,0 +1,15 @@
+.scroll__track {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  overflow: hidden;
+
+  width: 3px;
+  height: 100%;
+
+  user-select: none;
+
+  border-radius: 4px;
+  background: rgba(243, 243, 243, 0.1);
+}

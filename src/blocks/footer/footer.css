@@ -1,0 +1,23 @@
+@import url(./__sing/footer__sing.css);
+@import url(./__author/footer__author.css);
+@import url(./__link/footer__link.css);
+
+.footer {
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: calc(100% - 15px * 2);
+  max-width: calc(1280px - 15px * 2);
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

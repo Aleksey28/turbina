@@ -1,0 +1,26 @@
+.header__pic {
+  width: 720px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__pic {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__pic {
+    width: 620px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .header__pic {
+    width: 470px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header__pic {
+    width: 270px;
+  }
+}

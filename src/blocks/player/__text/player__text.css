@@ -1,0 +1,28 @@
+.player__text {
+  margin: 0;
+
+  white-space:pre;
+  /* or 135% */
+
+  color: #FFFFFF;
+
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 27px;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__text {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player__text {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}

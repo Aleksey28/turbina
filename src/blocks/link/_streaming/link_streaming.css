@@ -1,0 +1,21 @@
+.link_streaming {
+  background-color: transparent;
+  margin: 13px 13px 0 0;
+  display: none;
+  align-items: center;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  transition: .3s;
+}
+
+.link_streaming:hover {
+  font-style: italic;
+}
+@media screen and (max-width: 320px) {
+  .link_streaming {
+    display: block;
+    margin-bottom: 267px;
+  }
+}

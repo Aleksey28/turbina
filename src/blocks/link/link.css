@@ -1,0 +1,39 @@
+@import url('./__title/link__title.css');
+
+
+.link {
+  height: 35px;
+  width: max-content;
+  border: 2px solid #FFF;
+  text-decoration: none;
+  border-radius: 30px;
+  color: #FFF;
+  padding: 8px 20px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.link:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .link {
+    height: 34px;
+    padding: 8px 18px;
+    margin-bottom: 7px;
+
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .link {
+    height: 29px;
+    padding: 7px 16px;
+    margin-bottom: 6px;
+  }
+}

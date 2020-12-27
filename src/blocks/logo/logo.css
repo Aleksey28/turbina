@@ -1,0 +1,24 @@
+.logo {
+  margin: 15px 0 0 25px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.logo:hover {
+  color: #000;
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 1024px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+}
